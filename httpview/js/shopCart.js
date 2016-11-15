@@ -134,7 +134,7 @@ function checkCookie() {
 
 
 function loadList(id) {
-	var url="webmanager/Product/GetProductById_get";
+	var url="../Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{

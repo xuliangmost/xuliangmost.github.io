@@ -125,7 +125,7 @@ function getMycookie() {
 };
 
 function getCount() {
-	var url="webmanager/Product/GetProductById_get";
+	var url="../Product/GetProductById_get";
 	var setting={
 		dataType:"jsonP",
 		data:{
