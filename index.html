@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		<script src="js/particleground.all.js"></script>
+   		<script src="js/particle.js"></script>
+		<script src="js/Most.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+
+	<body>
+		<div id="demo"></div>
+			<div id="wrap-1">
+				<p id="demo-p1">
+				Most~随笔
+			</p>
+			<p id="demo-p2">
+				少时不努力&nbsp;长大搞IT
+			</p>
+				
+			</div>
+			
+			<div id="div2">
+				<ul id="div2-ul1">
+					<li><a href="webmanager/httpview/index.html"  target="_blank">Blog</a></li>
+					<li id="ul1-li2"><a  href="http://www.nike.com/cn/zh_cn/" target="_blank">Just Do It</a></li>
+					<li id="ul1-li1"><a  href="https://github.com/xuliangmost"  target="_blank"><img id="img1" src="img/github-logo.png"/></a></li>
+				</ul>
+			</div>
+			
+			<div id="div3">积累！是一个很长的过程，但在我身上却总是未走好就已飞奔，于是，我的积累也比别人快，只是思想中不愿顺其意，或是还未真正明白这些积累的意义，所以，常常把积累下的东西放在不见阳光的小屋子里，也许是不知道如何抽出第一根丝，所以就这样一直冷落了它们。如果把它们都简单化，那么，这一团丝也是能理出来的呀。于是，今晚明白，简单的第一步就是要放掉一些不需要的、不必要的、不重要的，让自己先轻快起来，才能真正简单。
+			<span id="sp1">
+				-Most
+			</span>
+
+			</div>
+			
+			
+			
+			
+			
+			
+		<script type="text/javascript">
+			var oDiv1=document.getElementById("demo");
+				var oWrap1=document.getElementById("wrap-1");
+				var oDiv2=document.getElementById("div2");
+				var oDiv3=document.getElementById("div3");
+
+				var oSp1=document.getElementById("sp1");
+				var Height=document.body.clientHeight||document.documentElement.clientHeight;
+				var Width=document.body.clientWidth||document.documentElement.clientWidth;
+				var Height1=Math.floor(Height/3);
+				var Width1=Math.floor(Width*0.6);
+				oSp1.style.width=oDiv3.offsetWidth+"px";
+				
+				
+				yd.move(oWrap1,{"top":Height1,"opacity":100},move2);
+				
+				function move2(){
+					yd.move(oDiv2,{"top":Height1+100,"opacity":100});
+					yd.move(oDiv3,{"left":Width1,"opacity":100});
+				}
+				
+				
+				new Particleground.particle( '#demo' );
+		</script>
+
+		
+	</body>
+
+</html>
