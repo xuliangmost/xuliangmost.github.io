@@ -1,0 +1,178 @@
+/**{*/
+	/*margin:0;*/
+	/*padding:0;*/
+/*}*/
+body{
+	background: #f8f8f8;
+}
+a{
+	text-decoration: none;
+}
+li{
+	float: left;
+	list-style: none;
+}
+.w{
+	width: 1190px;
+	margin: 0 auto;
+}
+#top1-wrap{
+	height: 30px;
+	width:100%;
+	background: #f3f3f5;
+	border-bottom:1px solid #e9e9e9;
+}
+#top1{
+	height:30px;
+	position:relative;
+}
+#top1 li{
+	height:30px;
+	line-height:30px;
+}
+#ul-left{
+	width:212px;
+	height:30px;
+	float: left;
+}
+#ul-left li{
+	border:1px solid #e9e9e9;
+	border-bottom: 0;
+	position: relative;
+}
+#ul-left li:nth-of-type(2){
+	border-left: 0;
+}
+#ul-left li a{
+	padding:0 20px;
+	color: #666;
+	font-size: 12px;
+	display: block;
+}
+#ul-left li a:hover{
+
+	color:red;
+}
+
+#ul-left .s1{
+	background: url("../images/sign-bg3.png") no-repeat 10px center;
+}
+
+#Code{
+	width:260px;
+	text-indent:40px;
+	position: absolute;
+	top:30px;
+	left:-1px;
+	z-index:1;
+	border:1px solid #dfdedf;
+	background:white;
+	border-top:0;
+	display: none;
+}
+#Code img{
+	display: block;
+	width: 130px;
+	height:130px;
+	margin:10px auto;
+}
+#Code .sp1{
+	font-size: 18px;
+	color: #000;
+
+}
+#Code .sp2{
+	color: #999;
+	margin-left: 40px;
+}
+
+#ul-mid{
+	/*float: left;*/
+	width:120px;
+	height:30px;
+	margin:0 auto;
+}
+#ul-mid li a{
+	color: red;
+	padding:0 10px;
+	font-size: 12px;
+}
+
+#ul-mid li #a1{
+	border-right:1px solid black;
+}
+
+
+#ul-right{
+	float: left;
+	position:absolute;
+	right:0;
+	top:0;
+
+}
+#ul-right li{
+	border:1px solid #f3f3f5;
+	border-bottom:0
+}
+
+
+
+#ul-right .p1{
+	background: url("../images/sign-bg2.png") no-repeat right center;
+	}
+
+
+
+#ul-right li a{
+	color:#666;
+	padding:0 15px;
+	font-size:12px;
+	/*display: block;*/
+}
+#ul-right li a:hover{
+	color:red
+}
+
+#yg{
+	width: 80px;
+	height:32px;
+	/*background: white;*/
+	/*display: none;*/
+	overflow: hidden;
+	z-index:10;
+}
+#ul-right li{
+	position: relative;
+}
+#gg{
+	position: absolute;
+	top:30px;
+	right:-1px;
+	width:226px;
+	z-index:10;
+	word-break: break-all;
+	word-wrap: break-word;
+	border:1px solid #dfdedf;
+	background:white;
+	border-top:0;
+	display: none;
+}
+#gd{
+	position: absolute;
+	top:30px;
+	right:-1px;
+	width:92px;
+	border:1px solid #dfdedf;
+	word-break: break-all;
+	border-top:0;
+	word-wrap: break-word;
+	display: none;
+	z-index:10;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<link rel="shortcut icon" href="title.ico">
+	<!--<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>-->
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/template.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<link rel="stylesheet" href="css/Right-Nav.css">
+	<link rel="stylesheet" href="css/shopCart.css">
+</head>
+<body>
+<div id="top1-wrap">
+	<div id="top1" class="w">
+		<ul id="ul-left">
+			<li class="bord0" style="background: white"><a href="javascript:void(0)">时尚商城</a></li>
+			<li class="bord0 bord1"><a href="javascript:void(0)">首尔站</a></li>
+			<li class="bord0 bord1">
+
+				<a href="javascript:void(0)" style="position: relative">
+					手机优购
+					<img class="s1" src="images/sign-bg3.png" alt="">
+				</a>
+				<div id="Code">
+					<img src="images/Code.png">
+					<span class="sp1 sp2">下载安装</span>
+					<span class="sp1">优购客户端</span>
+				</div>
+			</li>
+		</ul>
+		<ul id="ul-l-m">
+			<li><a id="signOut" href="javascript:void(0)" target="_blank">退出</a></li>
+			<li><a id="uName" href="javascript:void(0)" target="_blank"></a></li>
+			<li><a href="javascript:void(0)" target="_blank">欢迎您 !</a></li>
+
+
+		</ul>
+		<ul id="ul-mid">
+			<li><a id="a1" href="html/sign-in.html" target="_blank">登录</a></li>
+			<li><a href="html/sign-up.html" target="_blank">注册</a></li>
+		</ul>
+
+		<ul id="ul-right">
+			<li>
+				<div id="yg">
+					<p class="p1"><a href="javascript:void(0)">我的优购</a></p>
+					<p><a href="javascript:void(0)">我的收藏</a></p>
+
+				</div>
+			</li>
+
+
+			<li><a href="javascript:void(0)">我的订单</a></li>
+
+
+			<li>
+				<a href="javascript:void(0)" class="p1">公告</a>
+				<div id="gg">
+					<p><a href="javascript:void(0)">10-21台风影响</a></p>
+					<p><a href="javascript:void(0)">分享官方微信</a></p>
+					<p><a href="javascript:void(0)">分享购物群</a></p>
+					<p><a href="javascript:void(0)">关于跨境商品征税新政策调整</a></p>
+					<p><a href="javascript:void(0)">提醒会员谨防诈骗电话</a></p>
+				</div>
+			</li>
+			<li>
+				<a href="javascript:void(0)" class="p1">更多</a>
+				<div id="gd">
+					<p><a href="javascript:void(0)">收藏优购</a></p>
+					<p><a href="javascript:void(0)">帮助</a></p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+<div id="midLogo" class="w">
+	<a href="index.html"><img src="images/Cart/1.png" alt=""></a>
+	<div class="advance"></div>
+</div>
+
+<div id="CartMain">
+	<div id="CartMain-top">
+		<div class="CartMain-top1">
+			<input type="checkbox" id="check1"><label for="check1">全选</label>
+			商品名称
+		</div>
+		<span class="CartMain-top2">颜色尺码</span>
+		<span class="CartMain-top3">单价</span>
+		<span class="CartMain-top4">数量</span>
+		<span class="CartMain-top5">小计(元)</span>
+		<span class="CartMain-top6">操作</span>
+
+	</div>
+<div id="productList">
+	<!--<div class="productList">-->
+		<!--<input type="checkbox" class="productList-int">-->
+		<!--<div class="productList-div1">-->
+			<!--<img src="images/index-product5.jpg" alt="">-->
+		<!--</div>-->
+		<!--<p class="productList-p1">-->
+			<!--<a href="">阿迪王1999年最新最热最火电磁炉阿迪王1999年最新最热最火电磁炉阿迪王1999年最新最热最火电磁炉-->
+			<!--</a>-->
+		<!--</p>-->
+		<!--<div class="productList-div2">-->
+			<!--<p>颜色 : <span>大红大紫色</span></p>-->
+			<!--<p>尺码 : <span>XXXXXL</span></p>-->
+		<!--</div>-->
+
+		<!--<div class="productList-div2-price">-->
+			<!--9999-->
+		<!--</div>-->
+
+		<!--<div class="productList-div2-num">-->
+			<!--<input type="button" class="productList-in1">-->
+			<!--<input type="text" class="productList-in2" value="1">-->
+			<!--<input type="button" class="productList-in3">-->
+		<!--</div>-->
+
+		<!--<div class="productList-div2-subtotal">-->
+			<!--9999-->
+		<!--</div>-->
+
+
+		<!--<div class="productList-div2-do">-->
+			<!--<a href="javascript:void(0)">移入收藏夹</a>-->
+			<!--<a href="javascript:void(0)">删除</a>-->
+		<!--</div>-->
+
+	<!--</div>-->
+</div>
+
+
+
+
+
+	<div id="CartMain-bottom">
+		<input type="checkbox" id="check2"><label>全选</label>
+		<a href="javascript:void(0)">移入收藏夹</a>
+		<a href="javascript:void(0)">删除</a>
+	</div>
+
+
+	<div id="CartMain-last">
+		<a href="list-page.html" class="GoOn">继续购物</a>
+		<a href="javascript:void(0)" class="deleteCart">清空购物车</a>
+		<a href="javascript:void(0)" class="payFor">
+			去结算
+
+		</a>
+
+		<div class="total">
+			总计(不含运费) : ¥<span>9999</span>
+		</div>
+
+	</div>
+
+</div>
+
+<img class="CartLastImg" src="images/Cart/last1.png" alt="">
+<img class="CartLastImg" src="images/Cart/last2.png" alt="">
+
+<script id="list" type="text/html">
+{{each list as value i}}
+<div class="productList">
+	<input type="checkbox" class="productList-int">
+	<div class="productList-div1">
+		<img src={{value.sr}} alt="">
+	</div>
+	<p class="productList-p1">
+		<a href="">{{value.Name}}</a>
+	</p>
+	<div class="productList-div2">
+		<p>颜色 : <span class="productColor">{{value.color}}</span></p>
+		<p>尺码 : <span class="productSize">{{value.size}}</span></p>
+	</div>
+
+	<div class="productList-div2-price">
+		{{value.price}}
+	</div>
+
+	<div class="productList-div2-num">
+		<input type="button" class="productList-in1">
+		<input type="text" class="productList-in2" value={{value.count}}>
+		<input type="button" class="productList-in3">
+	</div>
+
+	<div class="productList-div2-subtotal">
+		{{value.price*value.count}}
+	</div>
+
+
+	<div class="productList-div2-do">
+		<a href="javascript:void(0)">移入收藏夹</a>
+		<a href="javascript:void(0)">删除</a>
+	</div>
+
+</div>
+{{/each}}
+</script>
+
+
+
+
+
+<script src="js/shopCart.js"></script>
+</body>
+</html>

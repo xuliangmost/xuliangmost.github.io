@@ -1,0 +1,196 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, span, a, img, form, fieldset, label, table, th, td{
+	margin: 0;
+	padding:0;
+}
+body{
+	font-size: 12px;
+	font-family:"Microsoft Yahei";
+
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.w{
+	width: 1190px;
+	margin:0 auto;
+}
+#ul3{
+	width:500px;
+	margin:18px 0 18px 0;
+	height:32px;
+	line-height:32px;
+	font-size: 16px;
+}
+#ul3 a{
+	padding:0 30px;
+	color: #666;
+	/*display: block;*/
+}
+#ul3 a:hover{
+	color: red;
+}
+#ul3 #a1{
+	padding-left: 0;
+}
+#ul3 li{
+	height:32px;
+}
+#ul3 li:nth-of-type(1){
+	border-right:1px solid #999;
+}
+
+#bg{
+	/*margin-top:100px;*/
+	/*max-width: 1440px;*/
+	height:553px;
+	background:url("../images/sign-bg.png") no-repeat;
+	position: relative;
+	background-size: cover;
+	border-top:1px solid #dcdbde
+}
+.w1{
+	height:553px;
+}
+
+
+
+#Sign2{
+	width: 378px;
+	height:530px;
+	float: right;
+	background:#fff;
+	margin-top: 12px;
+}
+.contain{
+width:348px;
+height:40px;
+border-bottom:1px solid #f3f3f3;
+margin: 24px auto;
+}
+
+.sign{
+	width:124px;
+	height:40px;
+	background: #f3f3f3;
+	line-height: 40px;
+	text-align: center;
+	float: left;
+	font-weight: bolder;
+	margin-left: 54px;
+}
+.sign a{
+	color: #333;
+}
+.sign:hover {
+	cursor: pointer;
+}
+.sign-up{
+	margin-left: 6px;
+	background: #333;
+}
+.sign-up a{
+	color: #ffffdf;
+}
+
+
+
+
+#Sign2 .pnm{
+	/*float: left;*/
+	width:320px;
+	height:210px;
+	margin:0 auto;
+	position: relative;
+	/*border:1px solid #e3e2e2;*/
+}
+#Sign2 .pnm input{
+	/*float: left;*/
+	width: 314px;
+	/*margin: 0 auto;*/
+	height:36px;
+	text-indent: 44px;
+}
+#Sign2 .pnm input:focus{
+	outline:none;
+}
+#Sign2 .pnm a{
+	float: right;
+	margin:36px 0 6px 0;
+	text-decoration: underline;
+	color: #666;
+}
+#Sign2 .pnm a:hover{
+	color: red;
+}
+
+#pnm1{
+	background: url("../images/sign2-bg1.png") no-repeat 12px center;
+	border:1px solid #e3e2e2;
+	margin-top: 36px;
+	position: relative;
+}
+#pnm2{
+	background: url("../images/sign2-bg2.png") no-repeat 12px center;
+	border:1px solid #e3e2e2;
+	margin-top: 36px;
+	position: relative;
+}
+.most1{
+	width:316px;
+	height:30px;
+	position: absolute;
+	top:80px;
+	left: 10px;
+	color: red;
+	display: none;
+}
+.most2{
+	width:316px;
+	height:30px;
+	position: absolute;
+	bottom:20px;
+	left: 10px;
+	color: red;
+	display: none;
+}
+.Sure{
+	display: block;
+	width: 314px;
+	height:40px;
+	margin: 0 auto;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	background: #e1373a;
+}
+.Sure:hover{
+	cursor: pointer;
+}
+
+#foot{
+	width:728px;
+	/*float: left;*/
+	height:24px;
+	font-size: 12px;
+	line-height: 24px;
+	text-align: center;
+	margin: 0 auto;
+	color: #b1b1c7;
+
+}
+#foot a{
+	color: #b1b1c7;
+}
+#foot #a2{
+	padding:10px 24px;
+}
+#foot a:hover{
+	color:red
+}
+/*.Sure:active{*/
+	/*line-height: 45px;*/
+	/*background: #ea7173;*/
+/*}*/

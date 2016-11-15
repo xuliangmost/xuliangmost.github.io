@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/Most.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+
+	<body>
+		<div id="bg">
+			<img id="mine" src="img/mine1.png" />
+			<!--<img src="img/planet1.png"/>
+				200*202
+			-->
+		</div>
+
+		<script type="text/javascript">
+			var oBg = document.getElementById("bg");
+			var oMine = document.getElementById("mine");
+			begin();
+			var bulleteNum = 1;
+			var bulleteSpeed = 30;
+			var bgSpeed = 1;
+			var planetSpeed = 14;
+			var arrBullete = [];
+			var arrplanet = [];
+			var time1;
+			var flag = true;
+
+			oMine.onclick = function() {
+				flag = !flag;
+				if(!flag) {
+					clearInterval(time1);
+				} else {
+					startMove();
+
+				}
+
+			}
+
+			function begin() {
+				var Height = document.body.clientHeight || document.documentElement.clientHeight;
+				var Height1 = parseInt(Height / 2);
+				var target1 = {
+					"top": Height1
+				}
+				yd.move(oMine, target1, Move);
+			}
+
+			function Move() {
+				window.onkeydown = function(e) {
+					if(e.keyCode == 32) {
+						oMine.src = "img/mine2.png";
+						creatbullete();
+					}
+
+					if(e.keyCode == 81) {
+
+						clearInterval(time1);
+					}
+
+				}
+
+				window.onkeyup = function(e) {
+					if(e.keyCode == 32) {
+						oMine.src = "img/mine1.png";
+					}
+				}
+				clearInterval(time1);
+				moveMine();
+
+				startMove();
+			}
+
+			function creatbullete() {
+				var mineBullete = document.createElement("img");
+				var x1 = oMine.offsetLeft;
+				var y1 = oMine.offsetTop;
+				mineBullete.src = "img/bullete" + bulleteNum + ".png";
+				mineBullete.style.position = "absolute";
+				mineBullete.style.width = 80 + "px";
+				mineBullete.style.height = 30 + "px";
+				mineBullete.style.left = x1 + 110 + "px";
+				mineBullete.style.top = y1 + 105 + "px";
+				mineBullete.style.zIndex = 100;
+				oBg.appendChild(mineBullete);
+				arrBullete.push(mineBullete);
+				bulleteNum++;
+				if(bulleteNum == 3) {
+					bulleteNum = 1;
+				}
+			}
+
+			function moveBullete() {
+				for(var i = 0; i < arrBullete.length; i++) {
+					arrBullete[i].style.left = arrBullete[i].offsetLeft + bulleteSpeed + "px";
+					if(arrBullete[i].offsetLeft > document.body.offsetWidth || arrBullete[i].offsetLeft > document.documentElement.offsetWidth) {
+						oBg.removeChild(arrBullete[i]);
+						arrBullete.splice(i, 1);
+						i--;
+					}
+				}
+			}
+
+			function moveMine() {
+				document.onmousemove = function(e) {
+					if(flag) {
+						var x = e.clientX;
+						var y = e.clientY;
+						var x1 = document.body.clientWidth || document.documentElement.clientWidth;
+						var y1 = document.body.clientHeight || document.documentElement.clientHeight;
+						oMine.style.cursor = "none";
+						oMine.style.left = x - oMine.offsetWidth / 2 - 10 + "px";
+						oMine.style.top = y - oMine.offsetHeight / 2 - 20 + "px";
+						if(oMine.offsetLeft < 0) {
+							oMine.style.left = 0 + "px";
+						}
+						if(oMine.offsetTop < 0) {
+							oMine.style.top = 0 + "px";
+						}
+						if(oMine.offsetLeft > x1 - oMine.offsetWidth) {
+							oMine.style.left = x1 - oMine.offsetWidth + "px";
+						}
+						if(oMine.offsetTop > y1 - oMine.offsetHeight) {
+							oMine.style.top = y1 - oMine.offsetHeight + "px";
+						}
+					}
+
+				}
+			}
+
+			function creatPlanet() {
+				var oImg = document.createElement("img");
+				var x1 = document.body.clientWidth || document.documentElement.clientWidth;
+				var y1 = document.body.clientHeight || document.documentElement.clientHeight;
+				var imgRan = Math.round(Math.random() * y1);
+				var ran = imgRan % 2;
+				if(ran == 1) {
+					oImg.HP = 15;
+					oImg.src = "img/planet" + ran + ".png";
+					oImg.Src = "img/planet3.gif";
+				} else {
+					oImg.HP = 20;
+					oImg.src = "img/planet" + ran + ".png";
+					oImg.Src = "img/planet3.gif";
+				}
+
+				oImg.style.width = "150px";
+				oImg.style.height = "152px";
+				oImg.style.position = "absolute";
+				oImg.style.left = x1 + "px";
+
+				if(imgRan - oImg.offsetHeight > y1 / 2) {
+					oImg.style.top = imgRan - oImg.offsetHeight - 200 + "px";
+				} else {
+					oImg.style.top = imgRan - oImg.offsetHeight + "px";
+				}
+				oImg.style.zIndex = 100;
+				oBg.appendChild(oImg);
+				arrplanet.push(oImg);
+
+			}
+
+			function movePlanet() {
+				for(var i = 0; i < arrplanet.length; i++) {
+					if(arrplanet[i].bomb) {
+						arrplanet[i].Disappear--;
+						if(arrplanet[i].Disappear == 0) {
+							oBg.removeChild(arrplanet[i]);
+							arrplanet.splice(i, 1);
+							i--;
+						}
+					} else {
+						arrplanet[i].style.left = arrplanet[i].offsetLeft - planetSpeed + "px";
+					}
+
+				}
+			}
+
+			function removePlanet() {
+				for(var k = 0; k < arrplanet.length; k++) {
+					if(arrplanet[k].offsetLeft < -1 * arrplanet[k].offsetWidth) {
+						oBg.removeChild(arrplanet[k]);
+						arrplanet.splice(k, 1);
+						k--;
+					}
+				}
+			}
+
+			function crash() {
+				for(var k = 0; k < arrBullete.length; k++) {
+					for(var i = 0; i < arrplanet.length; i++) {
+						if(arrplanet[i].bomb) {
+							continue;
+						}
+						if(arrBullete[k].offsetLeft < arrplanet[i].offsetLeft + arrplanet[i].offsetWidth) {
+							if(arrBullete[k].offsetLeft + arrBullete[k].offsetWidth > arrplanet[i].offsetLeft) {
+								if(arrBullete[k].offsetTop - arrplanet[i].offsetTop < arrplanet[i].offsetHeight) {
+									if(arrplanet[i].offsetTop - arrBullete[k].offsetTop < arrBullete[k].offsetHeight) {
+										oBg.removeChild(arrBullete[k]);
+										k--;
+										arrplanet[i].HP--;
+										if(arrplanet[i].HP == 0) {
+											arrplanet[i].bomb = true;
+											arrplanet[i].src = arrplanet[i].Src;
+											arrplanet[i].Disappear = 28;
+										}
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			function startMove() {
+				clearInterval(time1);
+				time1 = setInterval(function() {
+					bgSpeed++;
+					oBg.style.backgroundPositionX = -bgSpeed + "px";
+					if(bgSpeed % 50 == 0) {
+						creatPlanet();
+					}
+					moveBullete();
+					movePlanet();
+					removePlanet();
+					crash();
+				}, 30)
+			}
+		</script>
+	</body>
+
+</html>

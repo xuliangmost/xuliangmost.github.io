@@ -1,0 +1,154 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, span, a, img, form, fieldset, label, table, th, td{
+	margin: 0;
+	padding:0;
+}
+html,body{
+	height:100%;
+	font-size: 12px;
+	font-family:"Microsoft Yahei";
+	background: #f8f8f8;
+}
+img{
+	border:0;
+}
+a{
+	text-decoration: none;
+}
+#rightNav{
+	height:100%;
+	position: fixed;
+	right:-270px;
+	/*right:0;*/
+	bottom:0;
+	width:270px;
+	z-index:10;
+	background: #eceaea;
+	border-left:6px solid #7a6e6e;
+
+}
+
+#carMain-top{
+	width:100%;
+	height:40px;
+	position: relative;
+}
+#carMain-top-a{
+	float: left;
+	width:90px;
+	height:40px;
+	text-align: right;
+	line-height: 40px;
+	font-size: 1vw;
+	color: #666;
+	background: url(../images/Right-Nav-shop-bg1.png) no-repeat 20px center;
+}
+#carMain-top span{
+	display: block;
+	height:15px;
+	width:15px;
+	font-size: 15px;
+	line-height: 15px;
+	text-align: center;
+	color: #666;
+	position: absolute;
+	right:20px;
+	top:12px;
+}
+#carMain-top span:hover{
+	cursor:pointer;
+}
+
+#signtest{
+	width:100%;
+	height:34px;
+	/*box-shadow: -2px -2px 1px 1px #edd28b;*/
+	border:1px #edd28b ridge;
+}
+#signtest p{
+	width:210px;
+	height:34px;
+	float: left;
+	text-indent: 23px;
+	font-size: 0.8vw;
+	color: #000;
+	line-height: 34px;
+}
+#signtest a{
+	float: left;
+	width:34px;
+	height:20px;
+	line-height: 20px;
+	background:#c81623;
+	font-size: 0.7vw;
+	color: #fff;
+	margin-top:6px;
+	text-align: center;
+}
+#cartMain-Bottom{
+	width:100%;
+	height:36px;
+	position:absolute;
+	left:0;
+	bottom:10px;
+}
+
+#cartMain-Bottom a{
+	float: right;
+	width:110px;
+	height:36px;
+	line-height: 36px;
+	text-align:center;
+	color: #fff;
+	background:#c81623;
+	font-size: 1vw;
+	margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+#rightNav-left{
+	width:94px;
+	height:464px;
+	/*background:red;*/
+	position:absolute;
+	left:-36px;
+	/*top:50%;*/
+}
+#rightNav-left .bibibi{
+	width:36px;
+	height:36px;
+	display: block;
+	background: #7a6e6e;
+	margin-bottom:2px;
+	line-height: 36px;
+	text-align:center;
+	font-size: 0.8vw;
+	color: #fff;
+}
+#rightNav-left .bibo{
+	background:#7a6e6e url("../images/Right-Nav-shop-bg.png") no-repeat 6px center;
+}
+#rightNav-left .biubiubiu{
+	width:36px;
+	height:36px;
+	display: block;
+	margin-bottom:2px;
+}
+#rightNav-left .biubiubiu1{
+	margin-top:70px;
+	background: #7a6e6e url("../images/Right-Nav-top-bg.png") no-repeat center;
+}
+
+#rightNav-left .biubiubiu2{
+	background: #7a6e6e url("../images/Right-Nav-edit-bg.png") no-repeat center;
+}
+#rightNav-left a:hover{
+	background-color:#c81623;
+}

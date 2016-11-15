@@ -1,0 +1,281 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, span, a, img, form, fieldset, label, table, th, td{
+	margin: 0;
+	padding:0;
+}
+body{
+	font-size: 12px;
+	font-family:"Microsoft Yahei";
+	background: #f8f8f8;
+}
+img{
+	border:0;
+}
+a{
+	text-decoration: none;
+}
+li{
+	float: left;
+	list-style: none;
+}
+.w{
+	width: 1190px;
+	margin: 0 auto;
+}
+#foot{
+	/*height:500px;*/
+	background:white;
+	padding-bottom: 20px;
+
+	border-top:0;
+	position: relative;
+}
+#p1{
+	width:100%;
+	height:27px;
+	text-indent:4px;
+	color: #666;
+	border-bottom:2px solid #808080;
+	font-size: 18px;
+	padding-top: 3px;
+}
+#mark{
+	width:1080px;
+	height:244px;
+	border-left:1px solid #e8e8e8;
+	border-top:1px solid #e8e8e8;
+	margin:18px auto;
+	margin-bottom: 10px;
+	overflow: hidden;
+	position: relative;
+
+}
+#mark a{
+	width:89px;
+	height:20px;
+	display:block;
+	float: left;
+	border-right:1px solid #e8e8e8;
+	border-bottom:1px solid #e8e8e8;
+	text-align: center;
+	padding-top:40px;
+	color: #999;
+	background: url("../images/foot-sign.png")
+}
+#mark a:hover{
+	color: red;
+}
+#foot .sign-change{
+	width:11px;
+	height:21px;
+	display:block;
+	position: absolute;
+}
+#foot .sign-change:hover{
+	cursor: pointer;
+}
+#foot .sign-change1{
+	background:url("../images/foot-sign-change.png") no-repeat 0 center;
+	z-index:3;
+}
+#foot .sign-change2{
+	background:url("../images/foot-sign-change.png") no-repeat -12px center;
+	z-index:3;
+}
+
+
+#ulwrap{
+	width:1108px;
+	/*float: left;*/
+	height:170px;
+	margin:0 auto;
+}
+#ulwrap ul{
+	float: left;
+
+}
+#ulwrap ul li{
+	height:40px;
+	line-height: 40px;
+	/*margin-right: 50px;*/
+	width:520px;
+	border-bottom:1px dashed #e8e8e8;
+}
+#ulwrap ul li a{
+	float: left;
+	color: #888;
+	margin-left:20px;
+	font-size:14px;
+}
+#ulwrap ul li a:hover{
+	color: red;
+}
+#ulwrap ul li span{
+	float:right;
+}
+#ulwrap ul li span a{
+	margin: 0;
+}
+#ulwrap ul li .footli2{
+	color: #666;
+	font-weight:bolder;
+	margin-left:0;
+	margin-right:30px;
+}
+#ulwrap ul .footli{
+	margin-right: 68px;
+}
+#foot2{
+	width:100%;
+	height:206px;
+	border-top:1px solid #ececec;
+	margin-top:10px;
+	padding-top:8px;
+ }
+#promise{
+	height:46px;
+	line-height:46px;
+	border:1px solid #ececec;
+}
+#promise a{
+	color: #6f6666;
+	font-size: 18px;
+	display: block;
+	float: left;
+	margin-left:160px;
+}
+#promise a span{
+	color: red;
+}
+#promise a:hover{
+	color: red;
+}
+#help{
+	height:150px;
+}
+#foot2ul{
+	float: left;
+	margin-top:24px;
+}
+#foot2ul a:hover{
+	color:red;
+}
+#foot2ul p{
+	width:150px;
+	height:20px;
+}
+#foot2ul p a{
+	color: #777;
+}
+
+#foot2ul p:nth-of-type(1){
+	height:24px;
+}
+#foot2ul p:nth-of-type(1) a{
+	color: #555;
+	font-weight:bolder;
+}
+
+
+#foot2ul .footp{
+	text-indent: 20px;
+}
+
+
+#foot2ul .footspan{
+	color: red;
+	font-size: 10px;
+}
+#foot2ul .footp1{
+	width:200px;
+	margin-top:8px;
+}
+
+#help .helpdiv{
+	width:80px;
+	height:98px;
+	text-align: center;
+	float: right;
+	color: #666;
+	margin: 18px 20px 0 0;
+	position: relative;
+}
+#help .helpdiv img{
+	margin: 4px 0;
+
+}
+#help .helpdiv1{
+	margin-right:60px;
+}
+#help .helpdiv .most{
+	position: absolute;
+	right:0;
+	top:0;
+}
+#foot3{
+	width:100%;
+	height:103px;
+	background:black;
+}
+#foot3div1{
+	height: 103px;
+	background:url("../images/foot-logo.png") no-repeat left center;
+	color:white;
+}
+#foot3div1 a{
+	color: #fff;
+}
+#foot3div1 p{
+	width:1050px;
+	height:24px;
+	line-height: 24px;
+	float: right;
+	text-align:right;
+	font-size:10px;
+}
+#foot3ul1{
+	float:right;
+}
+#foot3ul1 li{
+	height:26px;
+	line-height: 26px;
+}
+#foot3ul1 li a{
+	padding:0 10px;
+	/*float: left;*/
+	border-left:1px solid #fff;
+
+}
+#foot3ul1 li:nth-of-type(1) a{
+	border-left:0;
+}
+#foot3ul1 a:hover{
+	color:red;
+}
+#foot3div2{
+	/*width:1050px;*/
+	height:40px;
+	margin-top:10px;
+	float: right;
+}
+
+#foot3div2 .safe{
+	float:left;
+	width:108px;
+	height:40px;
+	background: url("../images/foot-sign3.png") no-repeat;
+	margin-left:10px;
+}
+#footlast{
+	width:100%;
+	height:14px;
+	background: #fff;
+	border-top:1px solid #1f1c09;
+}
+#mark-wrap{
+	overflow: hidden;
+	border:1px solid #ececec;
+	border-top:0;
+}
+
+
+
