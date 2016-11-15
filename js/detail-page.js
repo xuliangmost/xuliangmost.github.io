@@ -420,7 +420,7 @@ function Most() {
 
 
 function getProduct(item) {
-	var url="../../Product/GetProductById_get";
+	var url="webmanager/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonP",
 		data:{
@@ -460,7 +460,7 @@ function getProduct(item) {
 }
 
 function updateProduct(item){
-	var url="../../Product/CreateUpdateProduct_post";
+	var url="webmanager/Product/CreateUpdateProduct_post";
 	var setting={
 		type:"post",
 		data:{
