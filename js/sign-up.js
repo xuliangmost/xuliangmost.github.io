@@ -72,7 +72,7 @@ $("#Sure").mousedown(function (e) {
 		if(flag1&&flag2&&flag3&&flag4&&flag5){
 			var uName=$("#t1").val();
 			var uPassword=$("#t4").val();
-			var url="webmanager/Product/GetProductById_get";
+			var url="../webmanager/Product/GetProductById_get";
 			var setting={
 				// type:'get',
 				dataType:"jsonp",
@@ -97,7 +97,7 @@ $("#Sure").mousedown(function (e) {
 							userNmae:uName,
 							userPassword:uPassword
 						}
-						var url="webmanager/Product/CreateUpdateProduct_get";
+						var url="../webmanager/Product/CreateUpdateProduct_get";
 						var setting={
 							type:"get",
 							dataType:"jsonp",
