@@ -125,7 +125,7 @@ function getMycookie() {
 };
 
 function getCount() {
-	var url="../Product/GetProductById_get";
+	var url="https://xl962143502.github.io/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonP",
 		data:{

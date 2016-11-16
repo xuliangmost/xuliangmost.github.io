@@ -420,7 +420,7 @@ function Most() {
 
 
 function getProduct(item) {
-	var url="../Product/GetProductById_get";
+	var url="https://xl962143502.github.io/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonP",
 		data:{
@@ -460,9 +460,10 @@ function getProduct(item) {
 }
 
 function updateProduct(item){
-	var url="../Product/CreateUpdateProduct_post";
+	var url="https://xl962143502.github.io/Product/CreateUpdateProduct_get";
 	var setting={
-		type:"post",
+		type:"get",
+		dataType:'jsonp',
 		data:{
 			Id:getMycookie(),
 			datajson:JSON.stringify(item),

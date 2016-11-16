@@ -34,7 +34,7 @@ $(".Sure").click(function () {
 		// alert(1)
 		var uNmae=$("#pnm1").val();
 		var uPassword=$("#pnm2").val();
-		var url="../../Product/GetProductById_get";
+		var url="https://xl962143502.github.io/Product/GetProductById_get";
 		var setting={
 			type:'get',
 			dataType:"jsonp",
