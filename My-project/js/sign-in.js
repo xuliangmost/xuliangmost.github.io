@@ -76,18 +76,28 @@ $(".Sure").click(function () {
 						if($("#kksb").is(":checked")){
 							$.cookie("user",str,{expires:14,path:"/"});
 							var loc=location.href.split("?");
-							if(loc[2]){
-								window.location.href="../"+loc[1]+"?"+loc[2];
+							if(loc[1]){
+								if(loc[2]){
+									window.location.href="../"+loc[1]+"?"+loc[2];
+								}else{
+									window.location.href="../"+loc[1];
+								}
 							}else{
-								window.location.href="../"+loc[1];
+								window.location.href="../index.html"
+								// alert(1)
 							}
 						}else{
 							$.cookie("user",str,{expires:1,path:"/"});
 							var loc=location.href.split("?");
-							if(loc[2]){
-								window.location.href="../"+loc[1]+"?"+loc[2];
+							if(loc[1]){
+								if(loc[2]){
+									window.location.href="../"+loc[1]+"?"+loc[2];
+								}else{
+									window.location.href="../"+loc[1];
+								}
 							}else{
-								window.location.href="../"+loc[1];
+								window.location.href="../index.html"
+								// alert(1)
 							}
 
 

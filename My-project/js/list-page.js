@@ -50,16 +50,6 @@ var setting={
 		//事件绑定要放到这里
 
 
-
-
-
-
-
-
-
-
-
-
 	},
 	error:function () {
 		alert("失败")
