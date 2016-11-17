@@ -197,6 +197,11 @@ function loadList(id) {
 					var Index=$(this).parent().parent().index();
 						deleteLine(Index);
 						$(this).parent().parent().remove();
+						var charge3=$(this).parent().parent().children(".productList-div2-subtotal").html();
+					if($(this).parent().parent().children(".productList-int").is(":checked")){
+						$(".total span").html(parseInt($(".total span").html())-parseInt(charge3));
+					}
+
 				});
 				//选中每件商品   价格跟着变化
 				$(".productList-int").click(function () {
