@@ -125,7 +125,7 @@ function getMycookie() {
 };
 
 function getCount() {
-	var url="http://qxw1152090270.my3w.com/Product/GetProductById_get";
+	var url="http://10.17.158.241:8081/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonP",
 		data:{
@@ -228,4 +228,9 @@ function checkCookie() {
 
 $("#top2-mid-butt").click(function () {
 	location.href="list-page.html";
+});
+
+$("#a1").click(function () {
+	var loc=location.href.split("/")[4];
+	$(this).attr("href","html/sign-in.html?"+loc)
 });

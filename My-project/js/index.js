@@ -139,42 +139,10 @@ for(var j=0;j<10;j++){
 
 
 
-
-
-// for(var j=0;j<70;j++){
-// 	if(j<10){
-// 		$(".main-jist1 a").eq(j).css({
-// 		backgroundPosition:j*-90+'px '+'4px'
-// 	})
-// 	}else if(j<20){
-// 		$(".main-jist2 a").eq(j).css({
-// 		backgroundPosition:(j-10)*-90+'px '+'-200px'
-// 	})
-// 	}else if(j<30){
-// 		$(".main-jist3 a").eq(j).css({
-// 		backgroundPosition:(j-20)*-90+'px '+'-160px'
-// 	})
-// 	}else if(j<40){
-// 		$(".main-jist4 a").eq(j).css({
-// 			backgroundPosition:(j-30)*-90+'px '+'-55px'
-// 		})
-// 	}else if(j<50){
-// 		$(".main-jist5 a").eq(j).css({
-// 		backgroundPosition:(j-30)*-90+'px '+'-200px'
-// 	})
-// 	}else if(j<60){
-// 		$(".main-jist6 a").eq(j).css({
-// 			backgroundPosition:(j-30)*-90+'px '+'-160px'
-// 		})
-// 	}else{
-// 		$(".main-jist7 a").eq(j).css({
-// 			backgroundPosition:(j-30)*-90+'px '+'4px'
-// 		})
-// 	}
-// }
-
-
-
+$("#a1").click(function () {
+	alert(1);
+	$(this).attr("href","html/sign-in.html");
+});
 
 
 $.ajax({

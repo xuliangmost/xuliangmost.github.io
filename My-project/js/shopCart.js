@@ -1,4 +1,9 @@
 
+$("#a1").click(function () {
+	var loc=location.href.split("/")[4];
+	$(this).attr("href","html/sign-in.html?"+loc)
+});
+
 
 if($.cookie("flag")){
 	checkCookie();
@@ -134,7 +139,7 @@ function checkCookie() {
 
 //加载购物车
 function loadList(id) {
-	var url="http://qxw1152090270.my3w.com/Product/GetProductById_get";
+	var url="http://10.17.158.241:8081/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{
@@ -151,30 +156,76 @@ function loadList(id) {
 				$("#productList").html(html1);
 
 
-
+				//减号键
 				$(".productList-in1").click(function () {
 					var Index=$(this).parent().parent().index();
 					$(this).next().val(parseInt($(this).next().val())-1);
 					if($(this).next().val()<=0){
 						deleteLine(Index);
+						$(this).parent().parent().remove();
+						$(".total span").html(parseInt($(".total span").html())-parseInt($(this).parent().parent().children(".productList-div2-price").html()));
 					}else{
-						deleteoneProduct(Index);
-					}
-				});
+						if($(this).parent().parent().children().first().is(":checked")){
+							$(".total span").html(parseInt($(".total span").html())-parseInt($(this).parent().parent().children(".productList-div2-price").html()));
+							deleteoneProduct(Index);
 
+							$(this).parent().parent().children().first().prop("checked");
+						}else{
+							deleteoneProduct(Index);
+						}
+						$(this).parent().parent().children(".productList-div2-subtotal").html(parseInt($(this).next().val())*parseInt($(this).parent().parent().children(".productList-div2-price").html()))
+					}
+
+				});
+				//加号键
 				$(".productList-in3").click(function () {
 					var Index=$(this).parent().parent().index();
-					addoneProduct(Index)
+					$(this).prev().val(parseInt($(this).prev().val())+1);
+					if($(this).parent().parent().children().first().is(":checked")){
+						$(".total span").html(parseInt($(".total span").html())+parseInt($(this).parent().parent().children(".productList-div2-price").html()));
+						addoneProduct(Index);
+						$(this).parent().parent().children().first().prop("checked");
+					}else{
+						addoneProduct(Index)
+					}
+					$(this).parent().parent().children(".productList-div2-subtotal").html(parseInt($(this).parent().parent().children(".productList-div2-subtotal").html())+parseInt($(this).parent().parent().children(".productList-div2-price").html()))
 				});
 
 
-
+				//删除这个商品
 				$(".deleteLine").click(function () {
 					var Index=$(this).parent().parent().index();
 						deleteLine(Index);
+						$(this).parent().parent().remove();
+				});
+				//选中每件商品   价格跟着变化
+				$(".productList-int").click(function () {
+					if($(this).is(":checked")){
+						var Num=$(this).parent().children(".productList-div2-subtotal").html()
+						$(".total span").html(parseInt($(".total span").html())+parseInt(Num))
+					}
+					if(!$(this).is(":checked")){
+						var Num1=$(this).parent().children(".productList-div2-subtotal").html();
+						$(".total span").html(parseInt($(".total span").html())-parseInt(Num1))
+					}
+
 				});
 
-				//删除按钮
+				//数量修改  失去焦点的时候
+				$(".productList-in2").blur(function () {
+					var Index=$(this).parent().parent().index();
+					var count=parseInt($(this).val());
+					changeCount(Index,count);
+					var charge1=parseInt($(this).parent().next().html());
+					$(this).parent().next().html(parseInt($(this).parent().prev().html()*count));
+					var charge2=parseInt($(this).parent().next().html());
+					if($(this).parent().parent().children(".productList-int").is(":checked")){
+						$(".total span").html(parseInt($(".total span").html())-(charge1-charge2));
+					}
+
+				});
+
+
 			}
 		}
 	};
@@ -182,7 +233,7 @@ function loadList(id) {
 }
 
 function deleteoneProduct(index) {
-	var url="http://qxw1152090270.my3w.com/Product/GetProductById_get";
+	var url="http://10.17.158.241:8081/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{
@@ -201,7 +252,7 @@ function deleteoneProduct(index) {
 
 
 function addoneProduct(index) {
-	var url="http://qxw1152090270.my3w.com/Product/GetProductById_get";
+	var url="http://10.17.158.241:8081/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{
@@ -221,7 +272,7 @@ function addoneProduct(index) {
 
 
 function deleteLine(index) {
-	var url="http://qxw1152090270.my3w.com/Product/GetProductById_get";
+	var url="http://10.17.158.241:8081/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{
@@ -234,8 +285,24 @@ function deleteLine(index) {
 			// console.log(data.Data);
 			arrProduct.splice(index,1);
 			upDate(arrProduct);
+		}
 
+	};
+	$.ajax(url,setting)
+}
 
+function changeCount(index,count) {
+	var url="http://10.17.158.241:8081/Product/GetProductById_get";
+	var setting={
+		dataType:"jsonp",
+		data:{
+			Id:myId,
+			type:"Product"
+		},
+		success:function (data) {
+			var arrProduct1=JSON.parse(data.Data);
+			arrProduct1[index].count=count;
+			upDate(arrProduct1);
 		}
 
 	};
@@ -245,7 +312,7 @@ function deleteLine(index) {
 
 
 function upDate(item) {
-	var url="http://qxw1152090270.my3w.com/Product/CreateUpdateProduct_get";
+	var url="http://10.17.158.241:8081/Product/CreateUpdateProduct_get";
 	var setting={
 		type:"get",
 		dataType:"jsonp",
@@ -261,7 +328,7 @@ function upDate(item) {
 			// alert("加入购物车失败!")
 		},
 		complete:function () {
-			loadList(myId);
+			// loadList(myId);
 		}
 	};
 	$.ajax(url,setting)
@@ -273,7 +340,7 @@ function upDate(item) {
 
 //清空购物车
 $(".deleteCart").click(function () {
-	var url="http://qxw1152090270.my3w.com/Product/DeleteProductById_get";
+	var url="http://10.17.158.241:8081/Product/DeleteProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{
@@ -292,6 +359,41 @@ $(".deleteCart").click(function () {
 });
 
 
+
+
+//全选
+
+$("#check2").click(function () {
+	if($(this).is(":checked")){
+		$(".productList-int").prop("checked",true)
+		allChecked();
+	}
+	if(!$(this).is(":checked")){
+		$(".productList-int").prop("checked",false)
+		$(".total span").html("0")
+	}
+
+});
+
+$("#check1").click(function () {
+	if($(this).is(":checked")){
+		$(".productList-int").prop("checked",true);
+		allChecked();
+	}
+	if(!$(this).is(":checked")){
+		$(".productList-int").prop("checked",false);
+		$(".total span").html("0")
+	}
+});
+
+
+function allChecked() {
+	var plusAllnum=0;
+	$(".productList-div2-subtotal").each(function () {
+		plusAllnum+=parseInt($(this).text())
+		$(".total span").html(plusAllnum)
+	})
+}
 
 
 

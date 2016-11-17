@@ -257,17 +257,17 @@ li{
 	text-align: center;
 	color: #aaa;
 }
-#CartMain-top .CartMain-top1 input{
-	width:13px;
-	height:13px;
-	border:1px solid #eee;
-	float: left;
-	margin-top:15px;
-	margin-left:20px;
-}
-#CartMain-top .CartMain-top1 label{
-	float: left;
-}
+/*#CartMain-top .CartMain-top1 input{*/
+	/*width:13px;*/
+	/*height:13px;*/
+	/*border:1px solid #eee;*/
+	/*float: left;*/
+	/*margin-top:15px;*/
+	/*margin-left:20px;*/
+/*}*/
+/*#CartMain-top .CartMain-top1 label{*/
+	/*float: left;*/
+/*}*/
 #CartMain-top span{
 	float: left;
 	height:42px;

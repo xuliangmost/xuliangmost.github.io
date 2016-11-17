@@ -35,7 +35,7 @@ $(".Sure").click(function () {
 		var uNmae=$("#pnm1").val();
 		var uPassword=$("#pnm2").val();
 
-		var url="http://qxw1152090270.my3w.com/Product/GetProductById_get";
+		var url="http://10.17.158.241:8081/Product/GetProductById_get";
 		var setting={
 			type:'get',
 			dataType:"jsonp",
@@ -75,10 +75,22 @@ $(".Sure").click(function () {
 						var str=JSON.stringify(obj);
 						if($("#kksb").is(":checked")){
 							$.cookie("user",str,{expires:14,path:"/"});
-							window.location.href="../index.html";
+							var loc=location.href.split("?");
+							if(loc[2]){
+								window.location.href="../"+loc[1]+"?"+loc[2];
+							}else{
+								window.location.href="../"+loc[1];
+							}
 						}else{
-							$.cookie("user",str);
-							window.location.href="../index.html";
+							$.cookie("user",str,{expires:1,path:"/"});
+							var loc=location.href.split("?");
+							if(loc[2]){
+								window.location.href="../"+loc[1]+"?"+loc[2];
+							}else{
+								window.location.href="../"+loc[1];
+							}
+
+
 						}
 
 
