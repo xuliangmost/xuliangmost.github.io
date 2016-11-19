@@ -139,7 +139,7 @@ function checkCookie() {
 
 //加载购物车
 function loadList(id) {
-	var url="http://10.17.158.241:8081/Product/GetProductById_get";
+	var url="http://127.0.0.1:8090/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{
@@ -238,7 +238,7 @@ function loadList(id) {
 }
 
 function deleteoneProduct(index) {
-	var url="http://10.17.158.241:8081/Product/GetProductById_get";
+	var url="http://127.0.0.1:8090/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{
@@ -257,7 +257,7 @@ function deleteoneProduct(index) {
 
 
 function addoneProduct(index) {
-	var url="http://10.17.158.241:8081/Product/GetProductById_get";
+	var url="http://127.0.0.1:8090/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{
@@ -277,7 +277,7 @@ function addoneProduct(index) {
 
 
 function deleteLine(index) {
-	var url="http://10.17.158.241:8081/Product/GetProductById_get";
+	var url="http://127.0.0.1:8090/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{
@@ -297,7 +297,7 @@ function deleteLine(index) {
 }
 
 function changeCount(index,count) {
-	var url="http://10.17.158.241:8081/Product/GetProductById_get";
+	var url="http://127.0.0.1:8090/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{
@@ -317,7 +317,7 @@ function changeCount(index,count) {
 
 
 function upDate(item) {
-	var url="http://10.17.158.241:8081/Product/CreateUpdateProduct_get";
+	var url="http://127.0.0.1:8090/Product/CreateUpdateProduct_get";
 	var setting={
 		type:"get",
 		dataType:"jsonp",
@@ -345,7 +345,7 @@ function upDate(item) {
 
 //清空购物车
 $(".deleteCart").click(function () {
-	var url="http://10.17.158.241:8081/Product/DeleteProductById_get";
+	var url="http://127.0.0.1:8090/Product/DeleteProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{

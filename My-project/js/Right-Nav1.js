@@ -41,7 +41,7 @@ if($.cookie("flag")){
 
 
 function loadMe(id) {
-	var url="http://10.17.158.241:8081/Product/GetProductById_get";
+	var url="http://127.0.0.1:8090/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{
