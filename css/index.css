@@ -12,8 +12,8 @@
 					background-size: cover;*/
 					overflow: hidden;
 					z-index: 10;
-					
-					
+
+
 				}
 				#wrap-1{
 					width: 500px;
@@ -67,7 +67,7 @@
 				#div2 #div2-ul1{
 				width: 347px;
 				height: 43px;
-				display: block;	
+				display: block;
 				margin: 0 auto;
 					
 					
@@ -128,9 +128,13 @@
 					top: 50%;
 					color:lightskyblue;
 					text-indent: 2vw;
-					
+
 				}
 				#div3 #sp1{
+					position: absolute;
+					right:0;
+					bottom:0;
+					z-index: 10;
 					width: 30%;
 					height: 20px;
 					font-family: "微软雅黑";

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>game</title>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body, html {
+			width: 100%;
+			height: 100%;
+		}
+
+		.div1 {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.total {
+			width: 100px;
+			height: 30px;
+			border: 1px solid #000;
+			box-shadow: 0 0 4px #80FFFA;
+			position: absolute;
+			left: -104px;
+			top: 0;
+			text-align: left;
+			line-height: 30px;
+			color: #D0B1FF;
+		}
+
+		canvas:nth-child(1) {
+			background: #00fffd;
+		}
+	</style>
+</head>
+<body>
+<div class="div1">
+	<canvas id="can1" width="500" height="500"></canvas>
+	<div class="total">
+		得分 :
+	</div>
+</div>
+<canvas id="can2" width="500" height="500"></canvas>
+<script>
+	var can1 = document.getElementById("can1");
+	var pen1 = can1.getContext("2d");
+	var time;
+	var total = 0;
+	var flag = true;
+	$(".div1").mousedown(function () {
+		if (canvasGame.pos.arrLine == false) {
+			var lineLength = 0;
+			time = setInterval(function () {
+				lineLength += 6;
+				canvasGame.gameLine(lineLength);
+				if(lineLength>=canvasGame.pos.arrBg[1]+50){
+					alert("你已经必死了!");
+					window.location.reload();
+				}
+			}, 20);
+		}
+	}).mouseup(function () {
+		var debug = 0;
+		clearInterval(time);
+		var x1 = canvasGame.pos.arrBg[1];
+		canvasGame.pos.arrBg[2] = (canvasGame.pos.arrBg[1] + Math.max(150, Math.floor(Math.random() * 400)));
+		console.log(canvasGame.pos.arrBg[2]);
+		if (flag) {
+			flag = false;
+			var time1 = setInterval(function () {
+				debug += 1;
+				if (debug <= 90) {
+					var a = debug * Math.PI / 180;
+					canvasGame.rotateLine(canvasGame.pos.arrLine[0], a)
+				}
+				else if (debug - 90 < canvasGame.pos.arrLine[0]) {
+					canvasGame.gameBox(debug - 90);
+					//小滑块移动
+				}
+				else if (debug - 90 == canvasGame.pos.arrLine[0]) {
+					if (canvasGame.pos.arrLine[0] + 55 < canvasGame.pos.arrBg[1] || canvasGame.pos.arrLine[0] > canvasGame.pos.arrBg[1]) {
+						alert("Game Over! 得分 : " + total);
+						window.location.reload();
+					}
+					else {
+
+						canvasGame.pos.arrBox[0] = canvasGame.pos.arrLine[0] + 50;
+						total++;
+						$(".total").text("得分 : " + total)
+					}
+				}
+				else if (debug - 90 - canvasGame.pos.arrLine[0] <= x1) {
+					//循环改变距离 判断条件也会变
+					var b = (debug - 90 - canvasGame.pos.arrLine[0]);
+					for (var k = 0; k < canvasGame.pos.arrBg.length; k++) {
+						canvasGame.pos.arrBg[k]--;
+					}
+					canvasGame.moveLine(b, canvasGame.pos.arrLine[0]);
+					canvasGame.gameBg(canvasGame.pos.arrBg);
+					canvasGame.moveBox(canvasGame.pos.arrBox[0], b - 4);
+				}
+				else {
+					clearInterval(time1);
+					flag = true;
+					canvasGame.pos.arrLine.splice(0, 1);
+					canvasGame.pos.arrBg.splice(0, 1);
+					canvasGame.pos.arrBox.splice(0, 1);
+				}
+			}, 10);
+		}
+	});
+	//每次小滑块运动结束后  在500的位置  生成一个bg  跟随开始生成的bg一起运动
+
+	var canvasGame = {
+		pos: {
+			arrBg: [],
+			arrBox: [],
+			arrLine: []
+		},
+		gameBg: function (bgArr) {
+			if (!bgArr) {
+				for (var i = 0; i < 2; i++) {
+					var ran = 150 + Math.floor(Math.random() * 100);
+					pen1.save();
+					pen1.beginPath();
+					pen1.fillStyle = "#000";
+					pen1.rect(i * ran, 350, 80, 150);
+					this.pos.arrBg.push(i * ran);
+					pen1.fill();
+					pen1.restore();
+				}
+			}
+			if (bgArr) {
+				for (var j = 0; j < bgArr.length; j++) {
+//					pen1.save();
+//					pen1.clearRect(0,350,500,350);
+					pen1.beginPath();
+					pen1.fillStyle = "#000";
+					pen1.rect(bgArr[j], 350, 80, 150);
+					pen1.fill();
+//					pen1.restore();
+				}
+
+			}
+
+		},
+		gameBox: function (arrLine) {
+			if (!arrLine) {
+				pen1.beginPath();
+				pen1.fillStyle = "#FF0D00";
+				pen1.rect(30, 320, 20, 30);
+				pen1.fill();
+			}
+			if (arrLine) {
+				pen1.beginPath();
+				pen1.clearRect(0, 0, 500, 350);
+				pen1.fillStyle = "#FF0D00";
+				pen1.rect(arrLine + 60, 320, 20, 30);
+				pen1.fill();
+				this.pos.arrBox[0] = arrLine;
+			}
+		},
+		moveBox: function (a, b) {
+			pen1.beginPath();
+			pen1.clearRect(0, 0, 500, 350);
+			pen1.fillStyle = "#FF0D00";
+			pen1.rect(a - b, 320, 20, 30);
+			pen1.fill();
+		},
+		gameLine: function (lineLength) {
+			pen1.clearRect(78, 0, 500, 350);
+			pen1.beginPath();
+			pen1.fillStyle = "#6A7BFF";
+			pen1.rect(80, 350 - lineLength, 8, lineLength);
+			this.pos.arrLine[0] = lineLength;
+			pen1.fill();
+		},
+		moveLine: function (x, lineLength) {
+			pen1.clearRect(0, 350, 500, 350);
+			pen1.beginPath();
+			pen1.fillStyle = "#6A7BFF";
+			pen1.rect(80 - x, 350, lineLength, 8);
+			this.pos.arrLine[0] = lineLength;
+			pen1.fill();
+		},
+		rotateLine: function (lineLength, a) {
+			pen1.save();
+			pen1.beginPath();
+			pen1.clearRect(70, 0, 500, 350);
+			pen1.fillStyle = "#6A7BFF";
+			pen1.translate(78, 350);
+			pen1.rotate(a);
+			pen1.rect(10, -2, -8, -lineLength);
+			pen1.fill();
+			pen1.rotate(-a);
+//			pen1.translate(-78, -350);
+			pen1.restore();
+		}
+	};
+	canvasGame.gameBg();
+	canvasGame.gameBox();
+</script>
+</body>
+</html>
