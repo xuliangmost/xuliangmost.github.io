@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>game</title>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body,html{
+			width:100%;
+			height:100%;
+		}
+		canvas{
+			position: absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+		}
+		canvas:nth-child(1){
+			background: #00fffd;
+		}
+	</style>
+</head>
+<body>
+<canvas id="can2" width="500" height="500"></canvas>
+<script>
+
+	var can2=document.getElementById("can2");
+	var pen2=can2.getContext("2d");
+	pen2.fillStyle="red";
+	pen2.font="100";
+	pen2.fillText("most",10,10);
+
+
+	var debug=0;
+
+
+
+
+//	var canvasGame={
+//		gameBg:function (bgArr) {
+//			if(!bgArr){
+//				for(var i=0;i<4;i++){
+//					var ran=150+Math.floor(Math.random()*100);
+//					pen2.beginPath();
+//					pen2.translate(0,0);
+//					pen2.fillStyle="#000";
+//					pen2.rect(i*ran,350,80,150);
+//					pen2.fill();
+//				}
+//			}
+//		},
+//		rotateLine:function (debug) {
+//
+//		}
+//	};
+//	canvasGame.rotateLine();
+//	$(document).mousedown(function () {
+//		pen2.clearRect(70,0,500,350);
+//		pen2.beginPath();
+//		pen2.fillStyle="#000";
+//		pen2.translate(70,350);
+//		pen2.rotate(90*Math.PI/180);
+//		pen2.rect(0,0,-8,-100);
+//		pen2.fill();
+//		console.log(parseInt(45*Math.PI/180*100));
+//		setInterval(function () {
+//			debug++;
+//			a = debug*Math.PI/180;
+//			pen2.beginPath();
+//			pen2.clearRect(0,0,500,350);
+//			pen2.fillStyle="#000";
+//			pen2.translate(70,350);
+//
+//			pen2.rotate(a);
+//			pen2.rect(0,0,-8,-100);
+//			pen2.fill();
+//			pen2.translate(-70,-350);
+//			console.log(a)
+//		},1000)
+//
+//	});
+//	canvasGame.gameBg();
+</script>
+</body>
+</html>
