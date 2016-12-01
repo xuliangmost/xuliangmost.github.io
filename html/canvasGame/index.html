@@ -45,7 +45,7 @@
 <div class="div1">
 	<canvas id="can1" width="500" height="500"></canvas>
 	<div class="total">
-		得分 :
+		得分 : 0
 	</div>
 </div>
 <canvas id="can2" width="500" height="500"></canvas>
@@ -71,6 +71,7 @@
 					canvasGame.gameBg();
 					canvasGame.gameBox();
 					flag = false;
+					$(".total").text("得分 : " + 0)
 				}else{
 					flag = true;
 				}
@@ -80,10 +81,9 @@
 		var debug = 0;
 		clearInterval(time);
 		var x1 = canvasGame.pos.arrBg[1];
-		canvasGame.pos.arrBg[2] = (canvasGame.pos.arrBg[1] + Math.max(150, Math.floor(Math.random() * 400)));
-		console.log(canvasGame.pos.arrBg[2]);
 		if (flag) {
 			flag = false;
+			canvasGame.pos.arrBg[2] = (canvasGame.pos.arrBg[1] + Math.max(150, Math.floor(Math.random() * 400)));
 			var time1 = setInterval(function () {
 				debug += 1;
 				if (debug <= 90) {
@@ -92,11 +92,13 @@
 				}
 				else if (debug - 90 < canvasGame.pos.arrLine[0]) {
 					canvasGame.gameBox(debug - 90);
+					
+
 					//小滑块移动
 				}
 				else if (debug - 90 == canvasGame.pos.arrLine[0]) {
-					if (canvasGame.pos.arrLine[0] + 55 < canvasGame.pos.arrBg[1] || canvasGame.pos.arrLine[0] > canvasGame.pos.arrBg[1]) {
-						alert("Game Over! 得分 : " + total);
+					if (canvasGame.pos.arrLine[0] + 58 < canvasGame.pos.arrBg[1] || canvasGame.pos.arrLine[0] > canvasGame.pos.arrBg[1]) {
+						clearInterval(time1);
 						pen1.clearRect(0,0,500,500);
 						canvasGame.pos.arrLine=[];
 						canvasGame.pos.arrBg=[];
@@ -104,9 +106,14 @@
 						canvasGame.gameBg();
 						canvasGame.gameBox();
 						flag = true;
+						alert("Game Over! 得分 : " + total);
+						$(".total").text("得分 : " + 0)
+						
+						
+//						window.location.reload();
+						
 					}
 					else {
-
 						canvasGame.pos.arrBox[0] = canvasGame.pos.arrLine[0] + 50;
 						total++;
 						$(".total").text("得分 : " + total)
