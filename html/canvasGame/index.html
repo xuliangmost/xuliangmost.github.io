@@ -71,7 +71,8 @@
 					canvasGame.gameBg();
 					canvasGame.gameBox();
 					flag = false;
-					$(".total").text("得分 : " + 0)
+					total=0;
+					$(".total").text("得分 : " + total)
 				}else{
 					flag = true;
 				}
@@ -107,7 +108,8 @@
 						canvasGame.gameBox();
 						flag = true;
 						alert("Game Over! 得分 : " + total);
-						$(".total").text("得分 : " + 0)
+						total=0;
+						$(".total").text("得分 : " + total)
 						
 						
 //						window.location.reload();
