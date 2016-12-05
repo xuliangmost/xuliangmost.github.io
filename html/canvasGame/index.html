@@ -5,6 +5,7 @@
 	<title>game</title>
 	<link rel="shortcut icon" href="../../title.ico">
 	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="/cdn.bootcss.com/zepto/1.2.0/zepto.js"></script>
 	<style>
 		* {
 			margin: 0;
@@ -55,6 +56,93 @@
 	var time;
 	var total = 0;
 	var flag = true;
+	
+	$(".div1")[0].addEventListener("touchstart",function(){
+		if (canvasGame.pos.arrLine == false) {
+			var lineLength = 0;
+			time = setInterval(function () {
+				lineLength += 6;
+				canvasGame.gameLine(lineLength);
+				if (lineLength >= canvasGame.pos.arrBg[1] + 50) {
+					alert("你已经挂了");
+					clearInterval(time);
+					canvasGame.gameRestart(total);
+					flag = false;
+				} else {
+					flag = true;
+				}
+			}, 20);
+		}
+		
+	})
+	
+	$(".div1")[0].addEventListener("touchend",function(){
+		var debug = 0;
+		clearInterval(time);
+		var x1 = canvasGame.pos.arrBg[1];
+		if (flag) {
+			flag = false;
+			canvasGame.pos.arrBg[2] = (canvasGame.pos.arrBg[1] + Math.max(150, Math.floor(Math.random() * 400)));
+			var time1 = setInterval(function () {
+				debug += 1;
+				if (debug <= 90) {
+					var a = debug * Math.PI / 180;
+					canvasGame.rotateLine(canvasGame.pos.arrLine[0], a)
+				}
+				else if (debug - 90 < canvasGame.pos.arrLine[0]) {
+					canvasGame.gameBox(debug - 90);
+
+
+					//小滑块移动
+				}
+				else if (debug - 90 == canvasGame.pos.arrLine[0]) {
+					if (canvasGame.pos.arrLine[0] + 56 < canvasGame.pos.arrBg[1] || canvasGame.pos.arrLine[0] > canvasGame.pos.arrBg[1]) {
+						clearInterval(time1);
+						canvasGame.gameRestart(total);
+
+
+//						window.location.reload();
+
+					}
+					else {
+						canvasGame.pos.arrBox[0] = canvasGame.pos.arrLine[0] + 50;
+						total++;
+						$(".total").text("得分 : " + total)
+					}
+				}
+				else if (debug - 90 - canvasGame.pos.arrLine[0] <= x1) {
+					//循环改变距离 判断条件也会变
+					var b = (debug - 90 - canvasGame.pos.arrLine[0]);
+					for (var k = 0; k < canvasGame.pos.arrBg.length; k++) {
+						canvasGame.pos.arrBg[k]--;
+					}
+					canvasGame.moveLine(b, canvasGame.pos.arrLine[0]);
+					canvasGame.gameBg(canvasGame.pos.arrBg);
+					canvasGame.moveBox(canvasGame.pos.arrBox[0], b - 4);
+				}
+				else {
+					clearInterval(time1);
+					flag = true;
+					canvasGame.pos.arrLine.splice(0, 1);
+					canvasGame.pos.arrBg.splice(0, 1);
+					canvasGame.pos.arrBox.splice(0, 1);
+				}
+			}, 10);
+		}
+		
+	})
+
+
+	
+	///////////////
+	
+	
+	
+	
+	
+	
+	
+
 	$(".div1").mousedown(function () {
 		if (canvasGame.pos.arrLine == false) {
 			var lineLength = 0;
