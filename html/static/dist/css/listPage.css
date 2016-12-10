@@ -115,17 +115,18 @@ section .section_main {
   overflow: hidden;
 }
 section .section_main .product0 {
-  margin: 10px;
+  margin: 10px 0;
   display: block;
   float: left;
   height: 267px;
 }
 section .section_main .product0 img {
-  width: 166px;
+  width: 160px;
   display: block;
+  margin-top: 10px;
 }
 section .section_main .product0 p {
-  width: 166px;
+  width: 160px;
   color: #444;
   word-break: break-all;
   word-wrap: break-word;
@@ -137,4 +138,5 @@ section .section_main .product0 span {
   display: inline-block;
   text-indent: 4px;
   font-size: 1.5rem;
+  margin-bottom: 10px;
 }
