@@ -67,11 +67,11 @@
                     $(".section_main").html(html);
                     touch.on(".product0", "tap", function(e) {
                         if (e.target.nodeName == "IDV") {
-                            window.open("item.html?" + this.lang);
-                            console.log(this.href)
+                            location.href="item.html?" + this.lang;
+                            //window.open("item.html?" + this.lang);
                         } else {
-                            window.open("item.html?" + this.parentNode.lang);
-                            console.log(this.parentNode.href)
+                            location.href="item.html?" + this.parentNode.lang
+                            //window.open("item.html?" + this.parentNode.lang);
                         }
                     })
                 }
