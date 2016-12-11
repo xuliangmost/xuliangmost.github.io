@@ -11,10 +11,6 @@ html {
   left: 0;
   top: 0;
   z-index: 1;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
   transition: all 1s ease;
 }
 .page1 .Hah {
@@ -328,9 +324,6 @@ html {
   padding: 12px 0;
   list-style: none;
   text-align: center;
-}
-.footer1 ul li a{
-  display: block;
 }
 .footer1 ul li img {
   width: 2.2rem;

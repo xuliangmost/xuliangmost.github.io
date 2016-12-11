@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<title>shiooingcart</title>
+		<link rel="stylesheet" href="../dist/css/common.css">
+		<link rel="stylesheet" href="../dist/css/shoppingcart.css">
+		<script src="../dist/common/jquery1.12.4.js"></script>
+		<script src="../dist/common/template.js"></script>
+	</head>
+	<body>
+		<header>
+			购物车
+		</header>
+		<section>
+			<script type="text/html" id="fks">
+				{{each list as value i}}
+					<dl>
+							<dt><img src={{value.src}} ></dt>
+							<dd>
+								<h3>
+									<div class="lt">{{value.name}}</div>
+									<div class="rt">x {{value.num}}</div>
+								</h3>
+								<p>颜色：{{value.color}}&nbsp;&nbsp;尺码：{{value.size}}</p>
+								<b>￥{{value.price}}</b>
+							</dd>
+					</dl>
+				{{/each}}
+			</script>
+		</section>
+		<footer class="footer1">
+			<ul>
+				<li>
+					<a href="../index.html"><img src="../dist/img/index/shouye1.png" alt=""></a>
+				</li>
+				<li>
+					<a href="sort.html"><img src="../dist/img/index/fenlei1.png" alt=""></a>
+				</li>
+				<li>
+					<a href="listPage.html"><img src="../dist/img/index/huojian1.png" alt=""></a>
+				</li>
+				<li>
+					<a href="shoppingcart.html"><img src="../dist/img/index/gouwuche2.png" alt=""></a>
+				</li>
+				<li><a href="login.html"><img src="../dist/img/index/wode1.png" alt=""></a></li>
+			</ul>
+		</footer>
+		<script>
+			var getPdt = localStorage.getItem("product");
+			if(getPdt){
+				var dataPdt = {
+					list:JSON.parse(getPdt)
+				}
+				var html = template("fks",dataPdt);
+				$("section").html(html);
+			}else{
+			}
+		</script>
+	</body>
+</html>

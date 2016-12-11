@@ -224,6 +224,9 @@
 	            	if($(".size").attr("size")){
 	            		str.size=$(".size").attr("size");
                         str.num=$(".s").next().html();
+                        str.src=kk.src;
+                        str.price = kk.price;
+                        str.name =  kk.parductName;
                         var oldList = localStorage.getItem("product")?JSON.parse(localStorage.getItem("product")):[];
                         //懒得去写判断商品存不存在了   在这里写出思路好了
                         //拿到获取的oldList   然后$.each(oldList)  id相等  尺寸一样  就让数量相加   否则就直接push到oldList
