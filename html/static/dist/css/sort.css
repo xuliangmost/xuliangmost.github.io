@@ -2,20 +2,26 @@ body,
 html {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+   overflow-x:hidden;
+}
+.wrap_page{
+  width100%;
+  height:100%;
+  overflow:hidden;
 }
 .page1 {
-  width: 80%;
+  width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
+  overflow-x:hidden;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
 .page1 .Hah {
-  width: 100%;
+  width: 80%;
   height: 100%;
   background: #f3f3f3;
   position: absolute;
@@ -126,6 +132,7 @@ html {
   background: #fff;
   -webkit-transition: all .6s ease;
   transition: all .6s ease;
+  overflow-x:hidden;
 }
 .page2 header {
   width: 100%;
