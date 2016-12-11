@@ -7,7 +7,7 @@ html {
 .wrap_page{
   width100%;
   height:100%;
-  overflow-x:hidden;
+  overflow:hidden;
 }
 .page1 {
   width: 100%;
