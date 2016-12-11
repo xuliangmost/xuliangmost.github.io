@@ -45,7 +45,7 @@
 //
 //
 //function loadMe(id) {
-//	var url="http://127.0.0.1:8090/Product/GetProductById_get";
+//	var url="http://10.9.164.22:8080/Product/GetProductById_get";
 //	var setting={
 //		dataType:"jsonp",
 //		data:{
@@ -92,7 +92,7 @@
 //}
 //var rightNav={
 //	loadMe:function(id) {
-//		var url="http://127.0.0.1:8090/Product/GetProductById_get";
+//		var url="http://10.9.164.22:8080/Product/GetProductById_get";
 //		var setting={
 //			dataType:"jsonp",
 //			data:{
@@ -185,7 +185,7 @@ if($.cookie("flag")){
 
 
 function loadMe(id) {
-	var url="http://127.0.0.1:8090/Product/GetProductById_get";
+	var url="http://10.9.164.22:8080/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonp",
 		data:{

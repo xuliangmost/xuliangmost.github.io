@@ -35,7 +35,7 @@ $(".Sure").click(function () {
 		var uNmae=$("#pnm1").val();
 		var uPassword=$("#pnm2").val();
 
-		var url="http://127.0.0.1:8090/Product/GetProductById_get";
+		var url="http://10.9.164.22:8080/Product/GetProductById_get";
 		var setting={
 			type:'get',
 			dataType:"jsonp",

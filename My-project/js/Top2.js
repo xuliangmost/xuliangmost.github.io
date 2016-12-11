@@ -125,7 +125,7 @@ function getMycookie() {
 };
 
 function getCount() {
-	var url="http://127.0.0.1:8090/Product/GetProductById_get";
+	var url="http://10.9.164.22:8080/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonP",
 		data:{

@@ -423,7 +423,7 @@ function Most() {
 
 
 function getProduct(item) {
-	var url="http://127.0.0.1:8090/Product/GetProductById_get";
+	var url="http://10.9.164.22:8080/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonP",
 		data:{
@@ -461,7 +461,7 @@ function getProduct(item) {
 }
 
 function updateProduct(item){
-	var url="http://127.0.0.1:8090/Product/CreateUpdateProduct_post";
+	var url="http://10.9.164.22:8080/Product/CreateUpdateProduct_post";
 	var setting={
 		type:"post",
 		data:{
@@ -485,7 +485,7 @@ function updateProduct(item){
 
 
 function getCount() {
-	var url="http://127.0.0.1:8090/Product/GetProductById_get";
+	var url="http://10.9.164.22:8080/Product/GetProductById_get";
 	var setting={
 		dataType:"jsonP",
 		data:{
