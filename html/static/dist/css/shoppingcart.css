@@ -60,10 +60,16 @@ section dl dd b {
 }
 .footer1 ul {
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 .footer1 ul li {
-  flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 12px 0;
   list-style: none;
   text-align: center;
