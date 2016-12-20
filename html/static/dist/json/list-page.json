@@ -4,78 +4,105 @@
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster1.jpg",
 			"parductName":"Monster Guardians粉色弹力裤",
 			"price":"98.00",
+                        "size":"xl",
+                        "color":"红色",
 			"id":"1"
+
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster2.jpg",
 			"parductName":"Monster Guardians大红色文胸",
 			"price":"126.00",
+                        "size":"l",
+                        "color":"酒红",
 			"id":"2"
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster3.jpg",
 			"parductName":"Monster Guardians黑色不好看T恤",
 			"price":"88.00",
+                        "size":"xxl",
+                        "color":"浅红",
 			"id":"3"
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster4.jpg",
 			"parductName":"Monster Guardians性感运动文胸",
 			"price":"645.00",
+                        "size":"xxxl",
+                        "color":"天蓝色",
 			"id":"4"
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster5.jpg",
 			"parductName":"Monster Guardians性感翘臀裤",
 			"price":"1465.00",
+                        "size":"s",
+                        "color":"浅蓝",
 			"id":"5"
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster6.jpg",
 			"parductName":"Monster Guardians太过保守的连帽卫衣",
 			"price":"312.00",
+                        "size":"l",
+                        "color":"深蓝",
 			"id":"6"
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster7.jpg",
 			"parductName":"Monster Guardians蓝色性感运动文胸",
 			"price":"4123.00",
+                        "size":"m",
+                        "color":"橘红",
 			"id":"7"
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster8.jpg",
 			"parductName":"Monster Guardians红色T恤",
 			"price":"421.00",
+                        "size":"m",
+                        "color":"大红",
 			"id":"8"
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster9.jpg",
 			"parductName":"Monster Guardians不好看短袖T恤",
 			"price":"745.00",
+                        "size":"s",
+                        "color":"黑色",
 			"id":"9"
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster10.jpg",
 			"parductName":"Monster Guardians黑色背包",
 			"price":"632.00",
+                        "size":"xl",
+                        "color":"灰色",
 			"id":"10"
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster11.jpg",
 			"parductName":"Monster Guardians翘臀弹力裤",
 			"price":"252.00",
+                        "size":"xcl",
+                        "color":"白色",
 			"id":"11"
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster12.jpg",
 			"parductName":"Monster Guardians粉色好看鸭舌帽",
 			"price":"126.00",
+                        "size":"xccl",
+                        "color":"浅灰",
 			"id":"12"
 		},
 		{
 			"src":"http://xuliangmost.com/html/static/dist/img/list-img/monster13.jpg",
 			"parductName":"Monster Guardians性感外穿内裤",
 			"price":"999.00",
+                        "size":"xxxxxl",
+                        "color":"藏青",
 			"id":"13"
 		}
 	]
