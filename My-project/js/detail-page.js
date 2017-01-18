@@ -416,9 +416,6 @@ function Most() {
 			'color':'#000'
 		})
 	});
-
-
-
 }
 
 
