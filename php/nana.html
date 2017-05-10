@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+
+
+
+
+
+
+
+
+
+	<meta charset="UTF-8">
+	<title>love</title>
+	<style type="text/css">
+		span{
+			height: 30px;
+			width: auto;
+			display: inline-block;
+			line-height: 30px;
+			position: relative;
+		}
+		#div1>span{
+			text-indent: 40px;
+		}
+		#div1>span:nth-of-type(1){
+			text-indent: 20px;
+		}
+		.sp1:after{
+			content: '';	
+			position: absolute;
+			display: block;
+			width: 2px;
+			background: #000;
+			height: 17px;
+			top: 6px;
+			right: -3px;
+			animation:myLove 1s infinite;
+		}
+		@keyframes myLove{
+			0%   {opacity: 1}
+			100%  {opacity: 0}
+		}
+	</style>
+	<script src='https://cdn.bootcss.com/jquery/2.2.3/jquery.js'></script>
+</head>
+<body>
+	<!-- <span class='sp1'></span> -->
+	<div id="div1">
+		
+	</div>
+
+	<script type="text/javascript">
+		var num=0;
+		var sp=1;
+		var words='亲爱的娜娜 ， 我又来了 ， 不要说我肉麻 ， 因为我也觉得肉麻。。。############&一：遇见你，是我生命的幸运；爱上你，是我生命的愉悦；失去你，是我生命的遗憾；没有你，无法感受心灵的震撼。此生惟愿爱你！######&二：如果有人偷走了我的心，我求主保佑我，也能偷走他的心。######&三：很多时候，我只是想能有个你，紧紧抱着我不放，直到我的情绪真的好起来。######&四：我莫名奇妙的笑了，只正因想到了你。######&五：你的笑颜，如一道清泉，流动清澈的情缘，漂洗我心的蜜甜，触动我情的涅槃，爱你是我最大的选取权，永远是不变的宣言。######&六：咱们能发展到这天真是几经波折，可能还有更多的考验等待着咱们，但我只知道一件事，我爱你，我只想和你永远在一齐！######&七：像所有人认为的那样，你就是我整个世界。######&八：我忽略时刻，正因等你出现；我忽略距离，正因等你出现；我忽略语言，正因想你一向未变。亲爱的，想你了。######&九：愉悦其实真的狠简单，有你有事做，有所期盼。　   ######&十：初恋像柠檬，虽酸却耐人寻味；热恋像火焰，虽热却不能自拔；失恋像伤疤，虽痛却无法释怀。因此咱们要懂得呵护感情！######&十一：如果你冷，我将你拥入怀中；如果你忧，我替你擦去泪痕；如果你爱我，我要向全世界广播…我只想给你我真实的爱。######&十二：我生命中最幸运的两件事：一件是时刻最后将我对你的爱消耗殆尽；一件是很久很久以前有一天，我遇见你。######&十三：傻笑不是与生俱来的，而是由我爱上你的那一刻开始的。';
+		var shouWord=words.split("");
+		$("#div1").append('<span class=sp'+sp+'></span>')
+		
+		//$("#div1").append('<br/><span class=sp'+sp+'></span>')
+		var time1=setInterval(function(){
+			if(shouWord[num]!=="#"){
+				if(shouWord[num]==="&"){
+					$('span').removeAttr("class")
+					$("#div1").append('<br/><span class=sp'+sp+'></span>')
+				}else{
+					$(".sp"+sp).html($(".sp"+sp).html()+shouWord[num])
+				}
+			}
+			num++;
+		},350)
+
+	</script>
+</body>
+</html>

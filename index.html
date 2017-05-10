@@ -64,8 +64,34 @@
             "opacity": 100
         });
     }
-
-
+// y 78 65     esc 27
+    var n1=null;
+    var a1=null;
+    var n2=null;
+    var a2=null;
+        document.body.addEventListener('keydown',function(e){
+            if(e.keyCode===27){
+                n1=null;
+                a1=null;
+                n2=null;
+                a2=null;
+            }
+            if(e.keyCode===78){
+                n1=78;
+            }
+            if(e.keyCode===65&&n1){
+                a1=65;
+            }
+            if(e.keyCode===78&&n1&&a1){
+                n2=78;
+            }
+            if(e.keyCode===65&&n1&&n2&&a1){
+                a2=65;
+                if(n1===n2&&a1===a2){
+                    location.href="http://xuliangmost.com/php/nana.html"
+                }
+            }
+        },true)
     new Particleground.particle('#demo');
     </script>
 </body>
