@@ -3,75 +3,75 @@
 <head>
 
 
+    <meta charset="UTF-8">
+    <title>love</title>
+    <style type="text/css">
+        span {
+            height: 30px;
+            width: auto;
+            display: inline-block;
+            line-height: 30px;
+            position: relative;
+        }
 
+        #div1 > span {
+            text-indent: 40px;
+        }
 
+        #div1 > span:nth-of-type(1) {
+            text-indent: 20px;
+        }
 
+        .sp1:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 2px;
+            background: #000;
+            height: 17px;
+            top: 6px;
+            right: -3px;
+            animation: myLove 1s infinite;
+        }
 
-
-
-
-
-
-
-	<meta charset="UTF-8">
-	<title>love</title>
-	<style type="text/css">
-		span{
-			height: 30px;
-			width: auto;
-			display: inline-block;
-			line-height: 30px;
-			position: relative;
-		}
-		#div1>span{
-			text-indent: 40px;
-		}
-		#div1>span:nth-of-type(1){
-			text-indent: 20px;
-		}
-		.sp1:after{
-			content: '';	
-			position: absolute;
-			display: block;
-			width: 2px;
-			background: #000;
-			height: 17px;
-			top: 6px;
-			right: -3px;
-			animation:myLove 1s infinite;
-		}
-		@keyframes myLove{
-			0%   {opacity: 1}
-			100%  {opacity: 0}
-		}
-	</style>
-	<script src='https://cdn.bootcss.com/jquery/2.2.3/jquery.js'></script>
+        @keyframes myLove {
+            0% {
+                opacity: 1
+            }
+            100% {
+                opacity: 0
+            }
+        }
+    </style>
+    <script src='https://cdn.bootcss.com/jquery/2.2.3/jquery.js'></script>
 </head>
 <body>
-	<!-- <span class='sp1'></span> -->
-	<div id="div1">
-		
-	</div>
-	<script type="text/javascript">
-		var num=0;
-		var sp=1;
-		var words='亲爱的娜娜 ， 我又又又又来了 。。。############&十七：爱，就是在一座叫缘分的桥上相遇，喝一碗叫相思的汤，拥一颗叫不变的心，过一种叫简单的生活，然后彼此牵手，走1条叫一辈子的路。######&十八：你爱我吗？如果是，请承担一切感情义务，即每一天想我多一点，每一天爱我多一点，每一天关心多一点，每一天联系多一点，必须要完成哟！######&十九：如果有人问我为什么爱你，我觉得我只能如此回答：正因是你，正因是我。######&二十：茫茫世界，想要遇到一个知心的人，确实很难；芸芸众生，想要遇到一份难得的爱，确实也很难。但我是幸运的，正因我遇到了你，愿你因我而愉悦！######&二十一：守一颗心，别像守一只猫。它冷了，来偎依你；它厌了，便偷偷地走掉。守一颗心，多期望像守一只狗。不是你守它，是它守你。######&二十二：心动是等你的留言，渴望是常和你见面，甜蜜是和你小路流连，温馨是看着你清澈的双眼，爱你的感觉真的妙不可言！######&二十三：我爱你，胜过爱自我。######&二十四：握不到你的手，但感觉到你的温柔。想见你，却是经常在梦中，想说爱你，却只能在心里！此时此刻，真的好想你。######&二十五：其实我不敢想象，没有你，生活会怎样。######&二十六：我很傻，我很笨，我有爱我的你。######&二十七：世上最浪漫和最自私的话就是：你是我一个人的。######&二十八：婉转浑坚的旋律，只为你弹奏；幸祸的白字，只为你而书写；调皮的情话，只为你而跳静；你，便是这么的不一样凡响。######&二十九：每次都是我不争气的先说对不起。######&三十：请别放开，花的牵绊，将我的爱攥在手心；请别忘记，花的约定，将我的情融入心底；触念无边的思念，素描相思的痕迹，济济红尘里，满是你笑意，缘分的给予，我会倍加珍惜，任天荒地老有时尽，爱你之心无边无际！';
-		var shouWord=words.split("");
-		$("#div1").append('<span class=sp'+sp+'></span>');
-		
-		//$("#div1").append('<br/><span class=sp'+sp+'></span>')
-		var time1=setInterval(function(){
-			if(shouWord[num]!=="#"){
-				if(shouWord[num]==="&"){
-					$('span').removeAttr("class")
-					$("#div1").append('<br/><span class=sp'+sp+'></span>')
-				}else{
-					$(".sp"+sp).html($(".sp"+sp).html()+shouWord[num])
-				}
-			}
-			num++;
-		},350)
+<!-- <span class='sp1'></span> -->
+<div id="div1">
 
-	</script>
+</div>
+<script type="text/javascript">
+    let num = 0;
+    let sp = 1;
+    let words = '亲爱的娜娜 ， 我又又又又来了 。。。############&十七：爱，就是在一座叫缘分的桥上相遇，喝一碗叫相思的汤，拥一颗叫不变的心，过一种叫简单的生活，然后彼此牵手，走1条叫一辈子的路。######&十八：你爱我吗？如果是，请承担一切感情义务，即每一天想我多一点，每一天爱我多一点，每一天关心多一点，每一天联系多一点，必须要完成哟！######&十九：如果有人问我为什么爱你，我觉得我只能如此回答：正因是你，正因是我。######&二十：茫茫世界，想要遇到一个知心的人，确实很难；芸芸众生，想要遇到一份难得的爱，确实也很难。但我是幸运的，正因我遇到了你，愿你因我而愉悦！######&二十一：守一颗心，别像守一只猫。它冷了，来偎依你；它厌了，便偷偷地走掉。守一颗心，多期望像守一只狗。不是你守它，是它守你。######&二十二：心动是等你的留言，渴望是常和你见面，甜蜜是和你小路流连，温馨是看着你清澈的双眼，爱你的感觉真的妙不可言！######&二十三：我爱你，胜过爱自我。######&二十四：握不到你的手，但感觉到你的温柔。想见你，却是经常在梦中，想说爱你，却只能在心里！此时此刻，真的好想你。######&二十五：其实我不敢想象，没有你，生活会怎样。######&二十六：我很傻，我很笨，我有爱我的你。######&二十七：世上最浪漫和最自私的话就是：你是我一个人的。######&二十八：婉转浑坚的旋律，只为你弹奏；幸祸的白字，只为你而书写；调皮的情话，只为你而跳静；你，便是这么的不一样凡响。######&二十九：每次都是我不争气的先说对不起。######&三十：请别放开，花的牵绊，将我的爱攥在手心；请别忘记，花的约定，将我的情融入心底；触念无边的思念，素描相思的痕迹，济济红尘里，满是你笑意，缘分的给予，我会倍加珍惜，任天荒地老有时尽，爱你之心无边无际！';
+    let shouWord = words.split("");
+    $("#div1").append('<span class=sp' + sp + '></span>');
+    let time1 = setInterval(function () {
+        if (!shouWord[num]) {
+            clearInterval(time1)
+        }
+        if (shouWord[num] !== "#" && shouWord[num]) {
+            if (shouWord[num] === "&") {
+                $('span').removeAttr("class");
+                $("#div1").append('<br/><span class=sp' + sp + '></span>')
+            } else {
+                $(".sp" + sp).html($(".sp" + sp).html() + shouWord[num])
+            }
+        }
+        num++
+    }, 350)
+
+
+</script>
 </body>
 </html>
