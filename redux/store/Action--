@@ -1,0 +1,8 @@
+export const login = token => ({
+  type: 'SET_TOKEN',
+  payload: token
+});
+export const webRTCInit = instance => ({
+  type: 'SET_WEB_RTC',
+  payload: instance
+});
