@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+<body>
+<div class="header">
+	<div class="header_float">
+		<div class="header_float_left"></div>
+		<div class="header_float_right">
+			<p>意外综合保障</p>
+			<p>180天-65周岁</p>
+			<p>1-3类可保</p>
+		</div>
+	</div>
+</div>
+
+<ul class="header_sub">
+	<li>
+		<i class="iconfont">&#xe657;</i>
+		<span>保单验真</span>
+	</li>
+	<li>
+		<i class="iconfont">&#xe657;</i>
+		<span>信息安全</span>
+	</li>
+	<li>
+		<i class="iconfont">&#xe657;</i>
+		<span>理赔协助</span>
+	</li>
+	<li>
+		<i class="iconfont">&#xe657;</i>
+		<span>续保无忧</span>
+	</li>
+</ul>
+
+<ul class="content_one">
+	<li class="content_one_title">
+		<span style="font-size: 1.6rem">无忧宝</span>
+		<span style="color: #dcdcdc;">保障期限: 1年</span>
+	</li>
+
+	<li>
+		<span style="font-size: 1.4rem">职业类别：</span>
+		<div>
+			<span>1-3类</span>
+			<span style="color: #fda048;">查询</span>
+		</div>
+	</li>
+
+	<li>
+		<span style="font-size: 1.4rem">投保年龄：</span>
+		<div class="content_one_li3_div">
+			<span class="content_one_li3_div_span span_bord_select">180天-9周岁</span>
+			<span class="content_one_li3_div_span" style="margin-left: 0.4rem">10周岁-65周岁</span>
+		</div>
+	</li>
+	<li style="border: 0;">
+		<span style="font-size: 1.4rem">保障计划：</span>
+		<span class="span_bord_select">计划一</span>
+	</li>
+</ul>
+
+<div class="jg">
+	<span></span>
+	<div style="display: flex;justify-content: center;align-items: center">
+		<i class="iconfont" style="color: #c2c2c2; font-size: 1.2rem;margin-top: 0.1rem">&#xe60e;</i>
+		<span style="color: #c2c2c2;margin-left: 0.4rem">保障权益/保额</span>
+	</div>
+	<span></span>
+</div>
+
+<ul class="content_two">
+	<li>
+		<span style="font-size: 1.4rem">意外身故/残疾</span>
+		<span style="font-size: 1.4rem">15万</span>
+	</li>
+	<li>
+		<span style="font-size: 1.4rem">意外医疗</span>
+		<span style="font-size: 1.4rem">2万</span>
+	</li>
+
+	<li style="border: 0;">
+		<span style="font-size: 1.4rem">意外住院津贴</span>
+		<div class="hospital_money_select">
+			<span class="hospital_money" style="font-size: 1.4rem">100元/天</span>
+			<i class="iconfont down">&#xe62b;</i>
+		</div>
+		<div class="float_slide">
+			<span>200元/天</span>
+			<span>300元/天</span>
+			<span>400元/天</span>
+		</div>
+	</li>
+</ul>
+
+<ul class="content_three">
+	<li class="product_select">
+		产品特色
+	</li>
+	<li>
+		理赔服务
+	</li>
+	<li>
+		常见问题
+	</li>
+	<li>
+		投保须知
+	</li>
+</ul>
+<div style="height:140px"></div>
+<div class="smallCustomer customer">
+	<div class="small">
+		<i class="iconfont" style="color: #eee;font-size: 2rem;">&#xe627;</i>
+		<span style="color: #eee">客服</span>
+	</div>
+
+	<div class="long">
+		<span>机器人</span>
+		<span>人工</span>
+	</div>
+</div>
+<div class="footer">
+	<span>¥180元</span>
+	<p>立即投保</p>
+</div>
+<script>
+  var most = {
+    showFloatSlide: false,
+    showCustomer: false
+  };
+  var oCustomer = $('.customer');
+  $('.content_one_li3_div_span').click(function () {
+    $(this).addClass('span_bord_select').siblings().removeClass('span_bord_select');
+  });
+  $(document.body).mousedown(function () {
+
+  });
+  $(window).scroll(function (e) {
+    if (most.showCustomer) {
+      oCustomer.addClass('smallCustomer').removeClass('long_customer');
+      $('.small').css('display', 'flex');
+      most.showCustomer = false;
+    }
+    if (most.showFloatSlide) {
+      $('.float_slide').removeClass('float_slide_show');
+      most.showFloatSlide = false;
+    }
+    if (window.scrollY > 80) {
+      oCustomer.css('display', 'block')
+    } else {
+      oCustomer.css('display', 'none')
+    }
+  });
+  $('.float_slide>span').click(function () {
+    $('.hospital_money').html($(this).html());
+    $('.float_slide').removeClass('float_slide_show');
+    most.showFloatSlide = false;
+  });
+  $('.hospital_money_select').click(function () {
+    if (!most.showFloatSlide) {
+      $('.float_slide').addClass('float_slide_show').siblings().removeClass('float_slide_show');
+      most.showFloatSlide = true;
+    } else {
+      $('.float_slide').removeClass('float_slide_show');
+      most.showFloatSlide = false;
+    }
+  });
+  $('.content_three>li').click(function () {
+    $(this).addClass('product_select').siblings().removeClass('product_select')
+  });
+  oCustomer.click(function () {
+    if (!most.showCustomer) {
+      $(this).addClass('long_customer').removeClass('smallCustomer');
+      most.showCustomer = true;
+      $('.small').css('display', 'none');
+    } else {
+      $(this).addClass('smallCustomer').removeClass('long_customer');
+      $('.small').css('display', 'flex');
+      most.showCustomer = false
+    }
+  })
+</script>
+</body>
+
+
+</html>
