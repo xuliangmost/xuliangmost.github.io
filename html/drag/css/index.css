@@ -100,20 +100,18 @@ body, html {
 }
 
 .top_server_list > .mask {
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    right: 0;
     background: rgba(0, 0, 0, 0.4);
-    z-index: -10;
-    opacity: 0;
-    transition: all 0.5s ease;
+    display: none;
+    transition: all 0.5s ease 0.2s;
 }
 
 .top_server_list > .show_mask {
-    z-index: 30;
-    opacity: 1;
+    display: block;
 }
 
 .top_server_list > .mask > .mask_container {
