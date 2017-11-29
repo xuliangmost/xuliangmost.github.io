@@ -20,6 +20,9 @@ body,html{
 	width: 100%;
 	font-size: 62.5%;
 }
+div{
+    cursor: pointer;
+}
 :focus { 
     outline: 0; 
 } 
