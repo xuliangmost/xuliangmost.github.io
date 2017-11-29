@@ -1,8 +1,7 @@
 document.getElementById('iscroll') && new IScroll('#iscroll', {
   mouseWheel: true,
-  scrollbars: false,
+  scrollbars: false
 });
-$('.mask').css('height', document.documentElement.clientHeight)
 $('.safe_words span').unbind('click').click(function () {
   $(this).parent().remove()
 });

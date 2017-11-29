@@ -99,48 +99,6 @@ body, html {
     background: #fff;
 }
 
-.top_server_list > .mask {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.4);
-    display: none;
-    transition: all 0.5s ease 0.2s;
-}
-
-.top_server_list > .show_mask {
-    display: block;
-}
-
-.top_server_list > .mask > .mask_container {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    bottom: 0;
-    right: 0;
-    background: #fff;
-    transition: all 0.4s ease
-}
-
-.top_server_list > .show_mask > .mask_container {
-    top: 20%;
-}
-
-.top_server_list > .mask > .mask_container > .mask_header {
-    height: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 4%;
-}
-
-.top_server_list > .show_mask > .mask_container > .mask_header {
-    height: 30px;
-}
-
 .top_server_list > li {
     flex: 1;
     text-align: center;
@@ -320,39 +278,37 @@ div.tab {
     text-align: left;
 }
 
-.work_type > .mask {
+.mask {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
     background: rgba(0, 0, 0, 0.4);
-    transition: all 0.5s ease;
     overflow: hidden;
-    z-index: -10;
-    opacity: 0;
+    display: none;
+    z-index: 10
 }
 
-.work_type > .show_mask {
-    z-index: 30;
-    opacity: 1;
+.show_mask {
+    display: block;
+    height: 736px;
 }
 
-.work_type > .mask > .mask_container {
+.mask > .mask_container {
     position: absolute;
     left: 0;
     top: 100%;
     bottom: 0;
     right: 0;
     background: #fff;
-    transition: all 0.4s ease
+    transition: all 0.4s ease 0.4s;
 }
 
-.work_type > .show_mask > .mask_container {
+.show_mask > .mask_container {
     top: 20%;
 }
 
-.work_type > .mask > .mask_container > .mask_header {
+.mask > .mask_container > .mask_header {
     height: 0;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
@@ -361,7 +317,7 @@ div.tab {
     padding-right: 4%;
 }
 
-.work_type > .show_mask > .mask_container > .mask_header {
+.show_mask > .mask_container > .mask_header {
     height: 30px;
 }
 
@@ -369,7 +325,7 @@ div.tab {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 5.2rem;
+    height: 50px;
     width: 100%;
     background: #fff;
     display: flex;
@@ -383,7 +339,7 @@ div.tab {
     flex: 1;
     height: 100%;
     color: #ff3900;
-    line-height: 5.2rem;
+    line-height: 50px;
 }
 
 .pay > .pay_money > span {
@@ -393,7 +349,7 @@ div.tab {
 .pay > .pay_consultation {
     width: 30%;
     height: 100%;
-    line-height: 5.2rem;
+    line-height: 50px;
     color: #666;
     font-size: 1.6rem;
     border-left: 1px solid #e7e7e7;
@@ -404,7 +360,14 @@ div.tab {
     height: 100%;
     background: #ff3900;
     border-radius: 6px;
-    line-height: 5.2rem;
+    line-height: 50px;
     font-size: 1.6rem;
     color: #fff;
+}
+#iscroll{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
