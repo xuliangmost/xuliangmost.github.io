@@ -1,7 +1,8 @@
-document.getElementById('iscroll') && new IScroll('#iscroll', {
+document.getElementById('wrapper') && new IScroll('#wrapper', {
   mouseWheel: true,
   scrollbars: false
 });
+$('.mask').css('height', document.documentElement.clientHeight);
 $('.safe_words span').unbind('click').click(function () {
   $(this).parent().remove()
 });
@@ -27,12 +28,12 @@ $('.top_server_list>li').unbind('click').click(function () {
   if ($(this).parent().parent().attr('class') === 'move_box') {
     $(this).parent().parent().css('position', 'static');
   }
-  $(this).parent().children('.mask').addClass('show_mask');
+  $('.topServerList').addClass('show_mask');
   $(document.body).css('overflow', 'hidden');
 });
 
-$('.top_server_list .mask_header').unbind('click').click(function () {
-  $(this).parent().parent().removeClass('show_mask');
+$('.topServerList .mask_header').unbind('click').click(function () {
+  $('.topServerList').removeClass('show_mask');
   $(document.body).css('overflow', 'visible');
   if ($(this).parent().parent().parent().parent().attr('class') === 'move_box') {
     $(this).parent().parent().parent().parent().css('position', 'relative');
@@ -42,12 +43,12 @@ $('.work_type>.right').unbind('click').click(function () {
   if ($(this).parent().parent().attr('class') === 'move_box') {
     $(this).parent().parent().css('position', 'static');
   }
-  $(this).parent().children('.mask').addClass('show_mask');
+  $('.workType').addClass('show_mask');
   $(document.body).css('overflow', 'hidden');
 });
 
-$('.work_type .mask_header').unbind('click').click(function () {
-  $(this).parent().parent().removeClass('show_mask');
+$('.workType .mask_header').unbind('click').click(function () {
+  $('.workType').removeClass('show_mask');
   $(document.body).css('overflow', 'visible');
   if ($(this).parent().parent().parent().parent().attr('class') === 'move_box') {
     $(this).parent().parent().parent().parent().css('position', 'relative');

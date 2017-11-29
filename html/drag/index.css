@@ -1,7 +1,6 @@
 body, html {
     height: 100%;
     width: 100%;
-    padding-bottom: 5.5rem;
 }
 
 .banner {
@@ -279,19 +278,20 @@ div.tab {
 }
 
 .mask {
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.5s ease;
     overflow: hidden;
-    display: none;
-    z-index: 10
+    z-index: -10;
+    opacity: 0;
 }
 
 .show_mask {
-    display: block;
-    height: 736px;
+    z-index: 20;
+    opacity: 1;
 }
 
 .mask > .mask_container {
@@ -301,7 +301,7 @@ div.tab {
     bottom: 0;
     right: 0;
     background: #fff;
-    transition: all 0.4s ease 0.4s;
+    transition: all 0.4s ease
 }
 
 .show_mask > .mask_container {
@@ -322,7 +322,7 @@ div.tab {
 }
 
 .pay {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     height: 50px;
@@ -364,10 +364,12 @@ div.tab {
     font-size: 1.6rem;
     color: #fff;
 }
-#iscroll{
+
+#wrapper{
     position: absolute;
-    top: 0;
     left: 0;
-    bottom: 0;
+    top: 0;
     right: 0;
+    bottom: 5.2rem;
 }
+
